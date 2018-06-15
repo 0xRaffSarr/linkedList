@@ -148,6 +148,7 @@ struct nodo *cancellaElemento(struct nodo *top,int k){
             x = tmp;
             tmp = tmp->next;
             free(x);
+            printf("%d\n",tmp->k );
         }
         else{
             tmp = tmp->next;
