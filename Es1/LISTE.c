@@ -58,11 +58,10 @@ void stampaLista(struct nodo *top){
     }
     else{
         printf("La lista e':\n");
-int i = 0;
-        while(i<5){
+
+        while(top != NULL){
             printf("%5d",top->k);
             top = top->next;
-            i++;
         }
         printf("\n\n");
     }
@@ -147,8 +146,9 @@ struct nodo *cancellaElemento(struct nodo *top,int k){
     while(tmp ->next != NULL){
         if(tmp->k==k){
             suc = tmp->next;
-            free(tmp);
-            tmp = suc;
+            printf("%d\n",suc->k );
+            //free(tmp);
+            //tmp = suc;
         }
         tmp = tmp->next;
     }
