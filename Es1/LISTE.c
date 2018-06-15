@@ -141,16 +141,17 @@ int cercaElemento(struct nodo *top,int k){
 
 struct nodo *cancellaElemento(struct nodo *top,int k){
     struct nodo *tmp = top;
-    struct nodo *suc = NULL;
+    struct nodo *x = NULL;
 
-    while(tmp ->next != NULL){
+    while(tmp!=NULL){
         if(tmp->k==k){
-            suc = tmp->next;
-            printf("%d\n",suc->k );
-            //free(tmp);
-            //tmp = suc;
+            x = tmp;
+            tmp = tmp->next;
+            free(x);
         }
-        tmp = tmp->next;
+        else{
+            tmp = tmp->next;
+        }
     }
     return top;
 }
