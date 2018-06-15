@@ -59,7 +59,7 @@ void stampaLista(struct nodo *top){
     else{
         printf("La lista e':\n");
 int i = 0;
-        while(top != NULL || i<5){
+        while(i<5){
             printf("%5d",top->k);
             top = top->next;
             i++;
