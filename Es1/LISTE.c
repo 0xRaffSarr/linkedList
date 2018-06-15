@@ -153,5 +153,6 @@ struct nodo *cancellaElemento(struct nodo *top,int k){
             tmp = tmp->next;
         }
     }
+    top = tmp;
     return top;
 }
