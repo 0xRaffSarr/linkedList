@@ -143,7 +143,7 @@ struct nodo *cancellaElemento(struct nodo *top,int k){
     struct nodo *tmp = top;
     struct nodo *suc = NULL;
 
-    while(tmp != NULL){
+    while(tmp ->next != NULL){
         if(tmp->k==k){
             suc = tmp->next;
             free(tmp);
