@@ -140,5 +140,5 @@ int cercaElemento(struct nodo *top,int k){
 }
 
 struct nodo *cancellaElemento(struct nodo *lista, int k){
-    struct nodo *pre = lista;
+    struct nodo *pre = lista; 
 }
