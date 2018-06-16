@@ -139,20 +139,17 @@ int cercaElemento(struct nodo *top,int k){
     return trovato;
 }
 
-struct nodo *cancellaElemento(struct nodo *top,int k){
-    struct nodo *tmp = top;
-    struct nodo *x = NULL;
+struct nodo *cancellaElemento(struct nodo *lista, int k){
+    struct nodo *aux = lista;
+    struct nodo *tmp = NULL;
 
-    while(tmp!=NULL){
-        if(tmp->k==k){
-            x = tmp;
-            tmp = tmp->next;
-            free(x);
-            printf("%d\n",tmp->k );
+    while(aux != NULL){
+        if(aux->k==k){
+            tmp = aux;
+            aux = aux->next;
+            free(tmp);
         }
-        else{
-            tmp = tmp->next;
-        }
+        aux = aux->next;
     }
-    return top;
+    return lista;
 }
