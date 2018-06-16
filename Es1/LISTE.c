@@ -140,5 +140,28 @@ int cercaElemento(struct nodo *top,int k){
 }
 
 struct nodo *cancellaElemento(struct nodo *lista, int k){
-    struct nodo *pre = lista; 
+    struct nodo *suc = lista;
+    struct nodo *pre = NULL;
+
+    while(suc != NULL && suc->k == k){
+        pre = suc;
+        suc = suc->next;
+        free(pre);
+    }
+    lista = suc;
+    if(lista != NULL){
+        pre = lista->next;
+        while(suc != NULL){
+            if(suc->k==k){
+                pre->next = suc->next;
+                free(suc);
+                suc = pre->next;
+            }
+            else{
+                pre = suc;
+                suc = pre->next;
+            }
+        }
+    }
+    return lista;
 }
