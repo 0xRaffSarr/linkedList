@@ -43,6 +43,11 @@ struct nodo *addCoda(struct nodo *top,int x){
 }
 
 
+struct nodo *addInMezzo(struct nodo *top,int k){
+
+}
+
+
 /*struct nodo *liberaMemoria(struct nodo *top){
     if(top != NULL){
         top ->next = liberaMemoria(top->next);

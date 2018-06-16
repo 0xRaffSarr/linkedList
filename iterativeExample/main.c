@@ -36,7 +36,7 @@ int main(){
                 lista = addCodaMultiplo(lista,dim);
                 break;
             }
-            case 'c':
+            case 'd':
                 {
                     printf("Ordina gli elementi in ordine crescente...\n");
                     lista = ordinaCrescente(lista);
@@ -45,7 +45,7 @@ int main(){
                     stampaLista(lista);
                     break;
                 }
-            case 'd':
+            case 'e':
                 {
                     printf("Ordina gli elementi in ordine decrescente...\n");
                     lista = ordinaDecrescente(lista);
@@ -54,11 +54,11 @@ int main(){
                     stampaLista(lista);
                     break;
                 }
-            case 'e':{
+            case 'f':{
                 stampaLista(lista);
                 break;
             }
-            case 'f':{
+            case 'g':{
                 printf("Inserisci l'elemento da cercare: ");
                 scanf("%d",&i);
 
@@ -70,7 +70,7 @@ int main(){
                 }
                 break;
             }
-            case 'g':{
+            case 'h':{
                 printf("Inserisci l'elemento da cancellare: ");
                 scanf("%d",&i);
 
@@ -78,7 +78,7 @@ int main(){
 
                 break;
             }
-            case 'h':{
+            case 'i':{
                 printf("\n\nElimino gli elementi della lista...\n");
                 lista = liberaMemoria(lista);
                 if(lista==NULL){
@@ -101,11 +101,12 @@ void stampaMenu(){
     printf("\n======MENU======\n");
     printf("a)Inserisci elementi in testa;\n");
     printf("b)Inserisci elementi in coda;\n");
-    printf("c)Ordina la lista in ordine crescente\n");
-    printf("d)Ordina la lista in ordine decrescente;\n");
-    printf("e)Stampa la lista;\n");
-    printf("f)Cerca elemento;\n");
-    printf("g)Elimina elemento;\n");
-    printf("h)Elimina l'intera lista;\n");
+    printf("c)Inserisci elementi in ordine;\n");
+    printf("d)Ordina la lista in ordine crescente\n");
+    printf("e)Ordina la lista in ordine decrescente;\n");
+    printf("f)Stampa la lista;\n");
+    printf("g)Cerca elemento;\n");
+    printf("h)Elimina elemento;\n");
+    printf("i)Elimina l'intera lista;\n");
     printf("z)Termina il programma;\n");
 }

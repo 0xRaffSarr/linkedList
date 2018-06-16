@@ -12,6 +12,7 @@ struct nodo{
 struct nodo *creaNodo(int);
 struct nodo *addTesta(struct nodo*,int);
 struct nodo *addCoda(struct nodo*,int);
+struct nodo *addInMezzo(struct nodo*,int);
 struct nodo *liberaMemoria(struct nodo*);
 struct nodo *addTestaMultiplo(struct nodo*,int);
 struct nodo *addCodaMultiplo(struct nodo *,int);
