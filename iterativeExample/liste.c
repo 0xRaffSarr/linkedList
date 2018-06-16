@@ -43,12 +43,23 @@ struct nodo *addCoda(struct nodo *top,int x){
 }
 
 
-struct nodo *liberaMemoria(struct nodo *top){
+/*struct nodo *liberaMemoria(struct nodo *top){
     if(top != NULL){
         top ->next = liberaMemoria(top->next);
         free(top);
     }
     return NULL;
+}*/
+
+
+struct nodo *liberaMemoria(struct nodo *top){
+    struct nodo *suc = NULL;
+    while(top != NULL){
+        suc = top->next;
+        free(top);
+        top = suc;
+    }
+    return top;
 }
 
 
