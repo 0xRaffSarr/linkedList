@@ -44,7 +44,18 @@ struct nodo *addCoda(struct nodo *top,int x){
 
 
 struct nodo *addInMezzo(struct nodo *top,int k){
+    struct nodo *cor = top;
+    struct nodo *suc = NULL;
 
+    while(cor->k <= k && cor->next->k <= k)
+        cor = cor->next;
+
+    suc = cor->next;
+    cor->next = creaNodo(k);
+    cor = cor->next;
+    cor->next = suc;
+
+    return top;
 }
 
 

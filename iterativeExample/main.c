@@ -36,6 +36,12 @@ int main(){
                 lista = addCodaMultiplo(lista,dim);
                 break;
             }
+            case 'c':{
+                printf("Insrisci elem: ");
+                scanf("%d",&i);
+                lista = addInMezzo(lista,i);
+                break;
+            }
             case 'd':
                 {
                     printf("Ordina gli elementi in ordine crescente...\n");
