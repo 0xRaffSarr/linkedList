@@ -37,13 +37,18 @@ int main(){
                 break;
             }
             case 'c':{
-                printf("Insrisci elem: ");
+                printf("Insrisci l'elemento da inserire: ");
                 scanf("%d",&i);
                 lista = addInMezzo(lista,i);
                 break;
             }
-            case 'd':
-                {
+            case 'd':{
+                printf("Inserisci il numero di elementi da inserire: ");
+                scanf("%d",&dim);
+                lista = addInMezzoMultiplo(lista,dim);
+                break;
+            }
+            case 'e':{
                     printf("Ordina gli elementi in ordine crescente...\n");
                     lista = ordinaCrescente(lista);
                     printf("Il vettore e' stato ordinato.\n");
@@ -51,8 +56,7 @@ int main(){
                     stampaLista(lista);
                     break;
                 }
-            case 'e':
-                {
+            case 'f':{
                     printf("Ordina gli elementi in ordine decrescente...\n");
                     lista = ordinaDecrescente(lista);
                     printf("Il vettore e' stato ordinato.\n");
@@ -60,11 +64,11 @@ int main(){
                     stampaLista(lista);
                     break;
                 }
-            case 'f':{
+            case 'g':{
                 stampaLista(lista);
                 break;
             }
-            case 'g':{
+            case 'h':{
                 printf("Inserisci l'elemento da cercare: ");
                 scanf("%d",&i);
 
@@ -76,7 +80,7 @@ int main(){
                 }
                 break;
             }
-            case 'h':{
+            case 'i':{
                 printf("Inserisci l'elemento da cancellare: ");
                 scanf("%d",&i);
 
@@ -84,7 +88,7 @@ int main(){
 
                 break;
             }
-            case 'i':{
+            case 'j':{
                 printf("\n\nElimino gli elementi della lista...\n");
                 lista = liberaMemoria(lista);
                 if(lista==NULL){
@@ -108,11 +112,12 @@ void stampaMenu(){
     printf("a)Inserisci elementi in testa;\n");
     printf("b)Inserisci elementi in coda;\n");
     printf("c)Inserisci elementi in ordine;\n");
-    printf("d)Ordina la lista in ordine crescente\n");
-    printf("e)Ordina la lista in ordine decrescente;\n");
-    printf("f)Stampa la lista;\n");
-    printf("g)Cerca elemento;\n");
-    printf("h)Elimina elemento;\n");
-    printf("i)Elimina l'intera lista;\n");
+    printf("d)Inserisci piu' elementi in ordine;\n");
+    printf("e)Ordina la lista in ordine crescente\n");
+    printf("f)Ordina la lista in ordine decrescente;\n");
+    printf("g)Stampa la lista;\n");
+    printf("h)Cerca elemento;\n");
+    printf("i)Elimina elemento;\n");
+    printf("j)Elimina l'intera lista;\n");
     printf("z)Termina il programma;\n");
 }

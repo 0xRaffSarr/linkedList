@@ -44,17 +44,32 @@ struct nodo *addCoda(struct nodo *top,int x){
 
 
 struct nodo *addInMezzo(struct nodo *top,int k){
-    struct nodo *cor = top;
-    struct nodo *suc = NULL;
+    struct nodo *tmp = creaNodo(k);
+    struct nodo *pre = NULL;
 
-    while(cor->k <= k && cor->next->k <= k)
-        cor = cor->next;
+    if(top == NULL) top = tmp;
+    else if (top->k > k) {
+        tmp->next = top;
+        top = tmp;
+    }
+    else{
+        pre = top;
+        while(pre->next != NULL && pre->next->k<k){
+            pre = pre->next;
+        }
+        tmp->next = pre->next;
+        pre->next = tmp;
+    }
+    return top;
+}
 
-    suc = cor->next;
-    cor->next = creaNodo(k);
-    cor = cor->next;
-    cor->next = suc;
 
+struct nodo *addInMezzoMultiplo(struct nodo *top, int n){
+    int i = 0, x = 0;
+    for(i=0;i<n;i++){
+        scanf("%d",&x);
+        top = addInMezzo(top,x);
+    }
     return top;
 }
 
@@ -97,23 +112,21 @@ void stampaLista(struct nodo *top){
 
 struct nodo *addTestaMultiplo(struct nodo *top, int  n){
     int i = 0, x = 0;
-    struct nodo *tmp = top;
     for(i=0;i<n;i++){
         scanf("%d",&x);
-        tmp = addTesta(tmp,x);
+        top = addTesta(top,x);
     }
-    return tmp;
+    return top;
 }
 
 
 struct nodo *addCodaMultiplo(struct nodo *top, int  n){
     int i = 0, x = 0;
-    struct nodo *tmp = top;
     for(i=0;i<n;i++){
         scanf("%d",&x);
-        tmp = addCoda(tmp,x);
+        top = addCoda(top,x);
     }
-    return tmp;
+    return top;
 }
 
 struct nodo *ordinaCrescente(struct nodo *top){
