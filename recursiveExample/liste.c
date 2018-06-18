@@ -80,7 +80,20 @@ struct nodo *ordinaDecrescente(struct nodo *top){}
 struct nodo *cancellaElemento(struct nodo *top,int k){}
 
 
-int cercaElemento(struct nodo *top,int k){};
+int cercaElemento(struct nodo *top,int k){
+    int found = 0;
+    if(top != NULL){
+        if(top->k == k){
+            found = 1;
+        }
+        else{
+            found = cercaElemento(top->next,k);
+        }
+    }
+    return found;
+}
+
+
 void stampaLista(struct nodo *top){
     if(top == NULL){
         printf("La lista e' vuota;\n\n");
