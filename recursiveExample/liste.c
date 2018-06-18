@@ -86,12 +86,7 @@ void stampaLista(struct nodo *top){
         printf("La lista e' vuota;\n\n");
     }
     else{
-        printf("La lista e':\n");
-
-        while(top != NULL){
             printf("%5d",top->k);
-            top = top->next;
+            if(top->next!=NULL) stampaLista(top->next);
         }
-        printf("\n\n");
-    }
 }

@@ -65,7 +65,9 @@ int main(){
                     break;
                 }
             case 'g':{
+                printf("La lista e': \n");
                 stampaLista(lista);
+                printf("\n\n");
                 break;
             }
             case 'h':{
