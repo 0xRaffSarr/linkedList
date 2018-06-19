@@ -1,5 +1,7 @@
 L'esempio mostra una serie di funzioni per manipolare le linked list;
-Alcune funzioni sono ripetitive e forse potrebbero essere evitate, ma per semplicità durante la realizzazione degli esempi sono state inserite.
+Alcune funzioni sono ripetitive e forse potrebbero essere evitate,
+ma per semplicità durante la realizzazione degli esempi sono state inserite.
+
 Gli esempi sono stati sviluppati in due modalità:
     1)Iterativa;
     2)Ricorsiva;
@@ -9,10 +11,16 @@ Le funzioni presenti sono:
     a)Inserisci elementi in testa;
     b)Inserisci elementi in coda;
     c)Inserisci elementi in ordine;
-    d)Inserisci piu' elementi in ordine;
+    d)Inserisci più elementi in ordine;
     e)Ordina la lista in ordine crescente;
     f)Ordina la lista in ordine decrescente;
     g)Stampa la lista;
     h)Cerca elemento;
     i)Elimina elemento;
     j)Elimina l'intera lista;
+
+Le funzioni ricorsive saranno svolti cercando di mantenere la stessa linea di
+quelle utilizzate per l'esempio iterativo.
+
+Per tale motivo l'esempio ricorsivo sarà ripresentato cercando di migliorare
+tali funzioni.
