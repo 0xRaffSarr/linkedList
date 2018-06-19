@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include "liste.h"
-
 /*
 Crea un semplice nodo.
 Ri chiede come parametri solo il valore int da inizializzare;
@@ -14,7 +13,7 @@ struct nodo *creaNodo(int k){
     return tmp;
 }
 /*
-Aggiungo un semplice elemento in testa alla lista, sia che essa sia vuota, sia
+La funzione aggiunge un elemento in testa alla lista, sia che essa sia vuota, sia
 che essa sia falsa;
 */
 struct nodo *addTesta(struct nodo *top,int k){
@@ -29,7 +28,9 @@ struct nodo *addTesta(struct nodo *top,int k){
     }
     return top;
 }
-
+/*
+La funzione rapprenseta una falsa ricorsione o meglio una ricorsione in coda per inserire più elementi in testa
+*/
 struct nodo *addTestaMultiplo(struct nodo *top,int n){
     int x = 0;
     if(n>0){
@@ -39,8 +40,9 @@ struct nodo *addTestaMultiplo(struct nodo *top,int n){
     }
     return top;
 }
-
-
+/*
+Aggiunge un elemento in coda
+*/
 struct nodo *addCoda(struct nodo* top,int k){
     struct nodo *tmp = NULL;
 
@@ -53,8 +55,9 @@ struct nodo *addCoda(struct nodo* top,int k){
     }
     return top;
 }
-
-
+/*
+La funzione rapprenseta una falsa ricorsione o meglio una ricorsione in coda per inserire più elementi in coda
+*/
 struct nodo *addCodaMultiplo(struct nodo *top,int n){
     int x = 0;
     if(n>0){
@@ -68,8 +71,9 @@ struct nodo *addCodaMultiplo(struct nodo *top,int n){
 
 struct nodo *addInMezzo(struct nodo *top,int k){}
 struct nodo *addInMezzoMultiplo(struct nodo *top,int k){}
-
-
+/*
+La funzione elimina tutti gli elementi della lista
+*/
 struct nodo *liberaMemoria(struct nodo *top){
     if(top!=NULL){
         top->next = liberaMemoria(top->next);
@@ -87,8 +91,9 @@ struct nodo *ordinaCrescente(struct nodo *top){
 struct nodo *ordinaDecrescente(struct nodo *top){
 
 }
+/*
 
-
+*/
 struct nodo *cancellaElemento(struct nodo *top,int k){
     struct nodo *tmp = NULL;
 
