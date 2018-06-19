@@ -68,6 +68,8 @@ struct nodo *addCodaMultiplo(struct nodo *top,int n){
 
 struct nodo *addInMezzo(struct nodo *top,int k){}
 struct nodo *addInMezzoMultiplo(struct nodo *top,int k){}
+
+
 struct nodo *liberaMemoria(struct nodo *top){
     if(top!=NULL){
         top->next = liberaMemoria(top->next);
@@ -75,7 +77,13 @@ struct nodo *liberaMemoria(struct nodo *top){
     }
     return NULL;
 }
-struct nodo *ordinaCrescente(struct nodo *top){}
+
+
+struct nodo *ordinaCrescente(struct nodo *top){
+
+}
+
+
 struct nodo *ordinaDecrescente(struct nodo *top){}
 struct nodo *cancellaElemento(struct nodo *top,int k){}
 

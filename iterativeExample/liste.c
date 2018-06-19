@@ -74,15 +74,6 @@ struct nodo *addInMezzoMultiplo(struct nodo *top, int n){
 }
 
 
-/*struct nodo *liberaMemoria(struct nodo *top){
-    if(top != NULL){
-        top ->next = liberaMemoria(top->next);
-        free(top);
-    }
-    return NULL;
-}*/
-
-
 struct nodo *liberaMemoria(struct nodo *top){
     struct nodo *suc = NULL;
     while(top != NULL){
