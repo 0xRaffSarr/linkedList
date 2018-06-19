@@ -47,7 +47,9 @@ struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo *tmp = creaNodo(k);
     struct nodo *pre = NULL;
 
-    if(top == NULL) top = tmp;
+    if(top == NULL){
+        top = tmp;
+    }
     else if (top->k > k) {
         tmp->next = top;
         top = tmp;
