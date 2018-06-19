@@ -84,8 +84,29 @@ struct nodo *ordinaCrescente(struct nodo *top){
 }
 
 
-struct nodo *ordinaDecrescente(struct nodo *top){}
-struct nodo *cancellaElemento(struct nodo *top,int k){}
+struct nodo *ordinaDecrescente(struct nodo *top){
+
+}
+
+
+struct nodo *cancellaElemento(struct nodo *top,int k){
+    struct nodo *tmp = NULL;
+
+    if(top!=NULL && top->k==k){
+        tmp = top->next;
+        printf("Eliminato %d\n",top->k);
+        free(top);
+        top = tmp;
+
+        top = cancellaElemento(top,k);
+        //return top->next;
+    }
+    else if(top->next!=NULL){
+        top->next = cancellaElemento(top->next,k);
+    }
+
+    return top;
+}
 
 
 int cercaElemento(struct nodo *top,int k){
