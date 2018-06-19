@@ -82,7 +82,14 @@ struct nodo *addInMezzo(struct nodo *top,int k){
          tmp->next = top;
          top = tmp;
     }
-    else if()
+    else if(pre->next != NULL && pre->next->k<k){
+        pre = addInMezzo(pre->next,k);
+    }
+    else{
+        tmp = creaNodo(k);
+        tmp->next = pre->next;
+        pre->next = tmp;
+    }
     return top;
 }
 /*
