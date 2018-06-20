@@ -171,10 +171,6 @@ struct nodo *split(struct nodo *start,struct nodo *end,int mod){
     }
     return ris;
 }
-
-struct nodo *ordinaDecrescente(struct nodo *top){
-
-}
 /*
 La funzione cancella un elemento e tutte le sue ripetizioni
 */
