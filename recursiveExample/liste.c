@@ -117,7 +117,25 @@ struct nodo *liberaMemoria(struct nodo *top){
 
 
 struct nodo *ordinaCrescente(struct nodo *top){
+    struct nodo *tmp = top;
 
+    while(tmp->next!=NULL){
+
+        if(tmp->next->next!=NULL){
+            tmp = ordinaCrescente(tmp->next);
+        }
+
+        if(tmp->k>tmp->next->k){
+            tmp->k += tmp->next->k;
+            tmp->next->k = tmp->k - tmp->next->k;
+            tmp->k -= tmp->next->k;
+
+        }
+
+
+        tmp= tmp->next;
+    }
+    return top;
 }
 
 
