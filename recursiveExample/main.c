@@ -44,7 +44,7 @@ int main(){
             }
             case 'd':{
                     printf("Ordina gli elementi in ordine crescente...\n");
-                    lista = ordinaCrescente(lista);
+                    lista = quickSort(lista,NULL,0);
                     printf("Il vettore e' stato ordinato.\n");
 
                     stampaLista(lista);
@@ -52,7 +52,7 @@ int main(){
                 }
             case 'e':{
                     printf("Ordina gli elementi in ordine decrescente...\n");
-                    lista = ordinaDecrescente(lista);
+                    lista = lista = quickSort(lista,NULL,1);
                     printf("Il vettore e' stato ordinato.\n");
 
                     stampaLista(lista);

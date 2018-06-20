@@ -114,30 +114,63 @@ struct nodo *liberaMemoria(struct nodo *top){
     }
     return NULL;
 }
+/*
+La funzione si occupa di ordinare il vettore. Per poterlo fare ha bisogno della funzione split.
+Il parametro mod viene passato alla funzione split;
+*/
+struct nodo *quickSort(struct nodo *start, struct nodo *end,int mod){
+    struct nodo *pivot = NULL;
 
-
-struct nodo *ordinaCrescente(struct nodo *top){
-    struct nodo *tmp = top;
-
-    while(tmp->next!=NULL){
-
-        if(tmp->next->next!=NULL){
-            tmp = ordinaCrescente(tmp->next);
-        }
-
-        if(tmp->k>tmp->next->k){
-            tmp->k += tmp->next->k;
-            tmp->next->k = tmp->k - tmp->next->k;
-            tmp->k -= tmp->next->k;
-
-        }
-
-
-        tmp= tmp->next;
+    if(start != end){
+        pivot = start;
+        start = split(start,end,mod);
+        start = quickSort(start,pivot,mod);
+        pivot->next = quickSort(pivot->next,end,mod);
     }
-    return top;
+    return start;
 }
+/*
+La funzione ricorsiva split si occupa viene richiamata dallla funzione ordina per poter ordinare il vettore;
+ha due modalità basate sul parametro mod:
+    0 ordina la lista in ordine decrescente
+    1 ordina la lista in ordine decrescente
+*/
+struct nodo *split(struct nodo *start,struct nodo *end,int mod){
+    struct nodo *p = NULL;
+    struct nodo *tempStart = NULL;
+    struct nodo *tempp = NULL;
+    struct nodo *pivot = NULL;
+    struct nodo *ris = NULL;
 
+    if(start == NULL){
+        ris = NULL;
+    }
+    else{
+        pivot = start;
+        p = start;
+        while(p->next != end){
+            if( (p->next->k) > (pivot->k) && mod == 1 ){
+                tempp = p->next;
+                tempStart = start;
+                p->next = tempp->next;
+                start = tempp;
+                start->next = tempStart;
+            }
+            else if( (p->next->k) < (pivot->k) && mod == 0 ){
+                tempp = p->next;
+                tempStart = start;
+                p->next = tempp->next;
+                start = tempp;
+                start->next = tempStart;
+            }
+            else{
+                p = p->next;
+            }
+        }
+        ris = start;
+    }
+    return ris;
+}
 
 struct nodo *ordinaDecrescente(struct nodo *top){
 

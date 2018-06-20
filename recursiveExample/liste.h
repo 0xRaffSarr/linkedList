@@ -17,8 +17,8 @@ struct nodo *addInMezzoMultiplo(struct nodo*,int);
 struct nodo *liberaMemoria(struct nodo*);
 struct nodo *addTestaMultiplo(struct nodo*,int);
 struct nodo *addCodaMultiplo(struct nodo *,int);
-struct nodo *ordinaCrescente(struct nodo *);
-struct nodo *ordinaDecrescente(struct nodo *);
+struct nodo *quickSort(struct nodo *,struct nodo *,int);
+struct nodo *split(struct nodo *,struct nodo *,int);
 struct nodo *cancellaElemento(struct nodo *,int);
 
 
