@@ -3,21 +3,21 @@ Alcune funzioni sono ripetitive e forse potrebbero essere evitate,
 ma per semplicità durante la realizzazione degli esempi sono state inserite.
 
 Gli esempi sono stati sviluppati in due modalità:
-    1)Iterativa;
-    2)Ricorsiva;
+1. Iterativa;
+1. Ricorsiva;
 
 Le funzioni presenti sono:
 
-    a)Inserisci elementi in testa;
-    b)Inserisci elementi in coda;
-    c)Inserisci elementi in ordine;
-    d)Inserisci più elementi in ordine;
-    e)Ordina la lista in ordine crescente;
-    f)Ordina la lista in ordine decrescente;
-    g)Stampa la lista;
-    h)Cerca elemento;
-    i)Elimina elemento;
-    j)Elimina l'intera lista;
+- Inserisci elementi in testa;
+- Inserisci elementi in coda;
+- Inserisci elementi in ordine;
+- Inserisci più elementi in ordine;
+- Ordina la lista in ordine crescente;
+- Ordina la lista in ordine decrescente;
+- Stampa la lista;
+- Cerca elemento;
+- Elimina elemento;
+- Elimina l'intera lista;
 
 Le funzioni ricorsive saranno svolti cercando di mantenere la stessa linea di
 quelle utilizzate per l'esempio iterativo.
