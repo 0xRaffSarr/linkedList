@@ -22,4 +22,4 @@ Le funzioni ricorsive saranno svolti cercando di mantenere la stessa linea di qu
 
 Per tale motivo l'esempio ricorsivo sarà ripresentato cercando di migliorare tali funzioni.
 
-Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quick Sort. 
+Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quick Sort.
