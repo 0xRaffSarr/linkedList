@@ -5,7 +5,7 @@ Alcune funzioni sono ripetitive e forse potrebbero essere evitate, ma per sempli
 Gli esempi sono stati sviluppati in due modalità:
 1. Iterativa;
 1. Ricorsiva;
-1. Liste doppiamente collegate(Iterative)
+1. Liste doppiamente collegate(Iterative);
 
 Le funzioni presenti sono:
 
@@ -19,7 +19,7 @@ Le funzioni presenti sono:
 - Elimina elemento;
 - Elimina l'intera lista;
 
-Le funzioni ricorsive saranno svolti cercando di mantenere la stessa linea di quelle utilizzate per l'esempio iterativo.
+Le funzioni ricorsive saranno svolte cercando di mantenere la stessa linea di quelle utilizzate per l'esempio iterativo.
 
 Per tale motivo l'esempio ricorsivo sarà ripresentato cercando di migliorare tali funzioni.
 
