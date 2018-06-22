@@ -5,6 +5,7 @@ Alcune funzioni sono ripetitive e forse potrebbero essere evitate, ma per sempli
 Gli esempi sono stati sviluppati in due modalità:
 1. Iterativa;
 1. Ricorsiva;
+1. Liste doppiamente collegate(Iterative)
 
 Le funzioni presenti sono:
 
