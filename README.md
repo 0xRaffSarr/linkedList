@@ -1,5 +1,4 @@
 # linkedList
-linked list e memoria dinamica
 L'esempio mostra una serie di funzioni per manipolare le linked list;
 
 Alcune funzioni sono ripetitive e forse potrebbero essere evitate, ma per semplicità durante la realizzazione degli esempi sono state inserite.
