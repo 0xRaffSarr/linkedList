@@ -1,4 +1,4 @@
-# linkedList ##1.0
+# linkedList
 L'esempio mostra una serie di funzioni per manipolare le linked list;
 
 Gli esempi sono stati sviluppati in due modalità:
