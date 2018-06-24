@@ -1,8 +1,6 @@
 # linkedList
 L'esempio mostra una serie di funzioni per manipolare le linked list;
 
-Alcune funzioni sono ripetitive e forse potrebbero essere evitate, ma per semplicità durante la realizzazione degli esempi sono state inserite.
-
 Gli esempi sono stati sviluppati in due modalità:
 1. Iterativa;
 1. Ricorsiva;
