@@ -25,9 +25,38 @@ struct nodo *creaLista(){
 void stampaLista(struct nodo *lista){
     struct nodo *tmp = lista;
 
-    while(tmp!=lista){
-        printf("%4d",tmp->data);
-        tmp = tmp->next;
+    /*if(isEmpty(lista)){
+        printf("\tLa lista e' vuota;\n");
     }
-    printf("\n");
+    else{*/
+        while(tmp!=lista){
+            printf("%4d",tmp->data);
+            tmp = tmp->next;
+        }
+        printf("\n");
+    //}
+}
+
+/*
+La procedura inserisce un elemento in testa sia che la lista sia vuota, sia che la lista abbia gia altri elementi
+Viene utilizzata la funzione isEmpty per semplificare il controllo
+*/
+void insInTesta(struct nodo *lista,int k){
+    struct nodo *top = NULL;
+    struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo));
+    tmp->data = k;//inizializzo il valore del nuovo elemento
+
+    if(isEmpty(lista)){
+        lista->prev = tmp;
+        lista->next = tmp;
+        tmp->prev = lista;
+        tmp->next = lista;
+    }
+    else{
+        top = lista->next;
+        top->prev = tmp;
+        tmp->prev = lista;
+        tmp->next = top;
+        lista->next = tmp;
+    }
 }
