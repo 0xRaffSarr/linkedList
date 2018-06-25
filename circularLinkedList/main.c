@@ -21,22 +21,8 @@ int main(){
         stampaMenu();
         printf("\tScegli l'iperazione da eseguire: ");
         scanf("\n%c",&op);
-
-        switch (op) {
-            case 'a':{
-                printf("Inserisci il numero di elementi: ");
-                scanf("%d",&dim);
-                for(i=0;i<dim;i++){
-                    scanf("%d",&x);
-                    lista = insInTesta(lista,x);
-                }
-                break;
-            }
-        }
+        
     }
-    stampaLista(lista);
-    lista = liberaMemoria(lista->next);
-    free(lista);
     return 0;
 }
 

@@ -10,8 +10,4 @@ struct nodo{
     struct nodo *prev;
 };
 
-struct nodo *insInTesta(struct nodo *,int);
-void stampaLista(struct nodo *);
-struct nodo *liberaMemoria(struct nodo *);
-
 #endif
