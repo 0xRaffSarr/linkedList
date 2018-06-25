@@ -10,7 +10,7 @@ struct nodo{
     struct nodo *prev;
 };
 
-struct nodo *creaNodo(int);
+struct nodo *insInTesta(struct nodo *,int);
 struct nodo *liberaMemoria(struct nodo *);
 
 #endif
