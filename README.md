@@ -1,10 +1,14 @@
 # linkedList
 L'esempio mostra una serie di funzioni per manipolare le linked list;
 
-Gli esempi sono stati sviluppati in due modalità:
-1. Iterativa;
-1. Ricorsiva;
-1. Liste doppiamente collegate(Iterative);
+Gli esempi sono stati sviluppati secondo due modalità:
+- Iterativa;
+- Ricorsiva;
+
+Vencono presentati tre tipi di Linked List:
+1. Liste linkate semplici;
+1. Liste doppiamente linkate;
+1. Liste doppiamente linkate con elemento fittizio(Circolari);
 
 Le funzioni presenti sono:
 
