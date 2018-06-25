@@ -13,7 +13,7 @@ int main(){
     int dim = 0,i = 0,x = 0;
     struct nodo *lista = NULL;
     lista = (struct nodo *)malloc(sizeof(struct nodo));
-    lista->data = 0;
+    //lista->data = NULL;
     lista->next = lista;
     lista->prev = lista;
 
@@ -34,7 +34,7 @@ int main(){
             }
         }
     }
-
+    stampaLista(lista);
     lista = liberaMemoria(lista->next);
     free(lista);
     return 0;

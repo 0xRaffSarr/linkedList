@@ -8,17 +8,7 @@ struct nodo *insInTesta(struct nodo *lista,int k){
     tmp->data = k;
     tmp->next = lista->next;
     tmp->prev = lista;
-    (lista->next)->next = tmp;
+    //(lista->next)->next = tmp;
     lista->next = tmp;
     return lista;
-}
-
-struct nodo *liberaMemoria(struct nodo *top){
-    struct nodo *suc = NULL;
-    while(top != NULL){
-        suc = top->next;
-        free(top);
-        top = suc;
-    }
-    return top;
 }

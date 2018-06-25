@@ -11,6 +11,7 @@ struct nodo{
 };
 
 struct nodo *insInTesta(struct nodo *,int);
+void stampaLista(struct nodo *);
 struct nodo *liberaMemoria(struct nodo *);
 
 #endif
