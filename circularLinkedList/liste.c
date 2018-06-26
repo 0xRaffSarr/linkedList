@@ -68,6 +68,22 @@ void insInCoda(struct nodo *lista,int k){
         tmp->next = lista;
     }
 }
+/*
+La procedura inserisce un elemento in ordine, se la lista è vuota, ovvero continene solo il valore sentinella, lo inserisce in testa
+*/
+void insInOrdine(struct nodo *lista, int k){
+        struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo *));
+        struct nodo *top = lista->next;
+        tmp->data = k;
+        while(top!=lista && top->data < k){
+            top = top->next;
+        }
+        tmp->next = top;
+        tmp->prev = top->prev;
+        top->prev->next = tmp;
+        top->prev = tmp;
+
+}
 //Stampa una lista circolare
 void stampaLista(struct nodo *lista){
     struct nodo *tmp = lista->next;

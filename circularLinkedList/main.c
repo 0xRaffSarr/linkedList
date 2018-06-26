@@ -41,6 +41,15 @@ int main(){
 
                 break;
             }
+            case 'c':{
+                printf("Inserisici il numero di elementi da inserire: ");
+                scanf("%d",&dim);
+                for(i=0;i<dim;i++){
+                    scanf("%d",&x);
+                    insInOrdine(lista,x);
+                }
+                break;
+            }
             case 'f':{
                 stampaLista(lista);
                 break;
@@ -60,6 +69,7 @@ int main(){
             }
         }
     }
+    cancellaLista(lista);
     free(lista);
     return 0;
 }
@@ -68,6 +78,7 @@ void stampaMenu(){
     printf("\t===== MENU =====\n");
     printf("\ta)Inserisci elementi in testa;\n");
     printf("\tb)Inserisci elementi in coda;\n");
+    printf("\tc)Inserisci elementi in ordine;\n");
     printf("\tf)Stampa lista;\n");
     printf("\tg)Elimina elemento;\n");
     printf("\ti)Elimina l'intera lista;\n");
