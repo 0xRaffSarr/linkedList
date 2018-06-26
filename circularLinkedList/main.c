@@ -25,7 +25,7 @@ int main(){
 
                 for(i=0;i<dim;i++){
                     scanf("%d",&x);
-                    insInTesta(lista,x);
+                    lista = insInTesta(lista,x);
                 }
 
                 break;
