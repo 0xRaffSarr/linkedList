@@ -143,3 +143,21 @@ struct nodo *swap(struct nodo *tmp1,struct nodo *tmp2){
 }
 
 /*
+Ordina una lista in ordine crescente
+*/
+struct nodo *ordinaCrescente(struct nodo *top){
+    struct nodo *tmp = NULL;
+    struct nodo *rmp = top->next;
+
+    while(rmp != top){
+        tmp = rmp;
+        while(tmp != top){
+            if(rmp->data>tmp->data){
+                rmp = swap(rmp,tmp);
+            }
+            tmp = tmp->next;
+        }
+        rmp = rmp->next;
+    }
+    return top;
+}
