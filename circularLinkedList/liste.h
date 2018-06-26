@@ -22,5 +22,7 @@ void insInCoda(struct nodo *,int);
 void stampaLista(struct nodo *);
 //canella l'intera lista tranne l'elemento sentinella
 void cancellaLista(struct nodo *);
+//cancella un elemento e le sue ripetiozioni
+void cancellaElemento(struct nodo*,int);
 
 #endif

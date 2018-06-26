@@ -95,3 +95,20 @@ void cancellaLista(struct nodo *lista){
         tmp = lista->next;
     }
 }
+/*
+Cancella un elemento e le sue ripetizioni
+*/
+void cancellaElemento(struct nodo *lista,int k){
+    struct nodo *tmp = NULL;
+    struct nodo *top = lista->next;
+
+    while(top!=lista){
+        if(top->data == k){
+            tmp = top;
+            (top->next)->prev = top->prev;
+            (top->prev)->next = top->next;
+            free(tmp);
+        }
+        top = top->next;
+    }
+}

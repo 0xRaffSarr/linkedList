@@ -45,6 +45,12 @@ int main(){
                 stampaLista(lista);
                 break;
             }
+            case 'g':{
+                printf("Inserisci l'elemento da eliminare: ");
+                scanf("%d",&x);
+                cancellaElemento(lista,x);
+                break;
+            }
             case 'i':{
                 printf("Cancello la lista ...\n");
                 cancellaLista(lista);
@@ -63,6 +69,7 @@ void stampaMenu(){
     printf("\ta)Inserisci elementi in testa;\n");
     printf("\tb)Inserisci elementi in coda;\n");
     printf("\tf)Stampa lista;\n");
+    printf("\tg)Elimina elemento;\n");
     printf("\ti)Elimina l'intera lista;\n");
     printf("\tz)Termina programma;\n");
 }
