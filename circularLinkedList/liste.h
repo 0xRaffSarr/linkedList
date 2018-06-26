@@ -16,6 +16,8 @@ int isEmpty(struct nodo *);
 struct nodo *creaLista();
 //Inserisce un elemento in testa alla lista
 void insInTesta(struct nodo *,int );
+//Inserisce un elemento in coda alla creaLista
+void insInCoda(struct nodo *,int);
 //Stampa una lista circolare
 void stampaLista(struct nodo *);
 

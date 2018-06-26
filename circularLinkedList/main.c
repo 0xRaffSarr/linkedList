@@ -30,6 +30,17 @@ int main(){
 
                 break;
             }
+            case 'b':{
+                printf("Inserisci il numero di elementi da inserire: ");
+                scanf("%d",&dim);
+
+                for(i=0;i<dim;i++){
+                    scanf("%d",&x);
+                    insInCoda(lista,x);
+                }
+
+                break;
+            }
             case 'f':{
                 stampaLista(lista);
                 break;

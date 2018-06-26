@@ -21,25 +21,8 @@ struct nodo *creaLista(){
     sentinella->next = sentinella;
     return sentinella;
 }
-
-//Stampa una lista circolare
-void stampaLista(struct nodo *lista){
-    struct nodo *tmp = lista->next;
-
-    if(isEmpty(lista)){
-        printf("\tLa lista e' vuota;\n");
-    }
-    else{
-        while(tmp!=lista){
-            printf("%4d",tmp->data);
-            tmp = tmp->next;
-        }
-        printf("\n");
-    }
-}
-
 /*
-La procedura inserisce un elemento in testa sia che la lista sia vuota, sia che la lista abbia gia altri elementi
+La procedura inserisce un elemento in testa sia che la lista sia vuota, sia che la lista abbia contenga altri elementi
 Viene utilizzata la funzione isEmpty per semplificare il controllo
 */
 void insInTesta(struct nodo *lista,int k){
@@ -61,4 +44,43 @@ void insInTesta(struct nodo *lista,int k){
         lista->next = tmp;
     }
     return;
+}
+/*
+La procedura inserisce un elemento in coda sia che la lista sia vuota sia che la lisa contenga altri elementi
+Viene utilizzata la funzione isEmpty per semplificare il tutto
+*/
+void insInCoda(struct nodo *lista,int k){
+    struct nodo *last = NULL;
+    struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo));
+    tmp->data = k;
+
+    if(isEmpty(lista)){
+        lista->prev = tmp;
+        lista->next = tmp;
+        tmp->next = lista;
+        tmp->prev = lista;
+    }
+    else{
+        last = lista->prev;
+        last->next = tmp;
+        tmp->prev = last;
+        lista->prev = tmp;
+        tmp->next = lista;
+
+    }
+}
+//Stampa una lista circolare
+void stampaLista(struct nodo *lista){
+    struct nodo *tmp = lista->next;
+
+    if(isEmpty(lista)){
+        printf("\tLa lista e' vuota;\n");
+    }
+    else{
+        while(tmp!=lista){
+            printf("%4d",tmp->data);
+            tmp = tmp->next;
+        }
+        printf("\n");
+    }
 }
