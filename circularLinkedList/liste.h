@@ -20,5 +20,7 @@ void insInTesta(struct nodo *,int );
 void insInCoda(struct nodo *,int);
 //Stampa una lista circolare
 void stampaLista(struct nodo *);
+//canella l'intera lista tranne l'elemento sentinella
+void cancellaLista(struct nodo *);
 
 #endif

@@ -45,8 +45,16 @@ int main(){
                 stampaLista(lista);
                 break;
             }
+            case 'i':{
+                printf("Cancello la lista ...\n");
+                cancellaLista(lista);
+                if(isEmpty(lista)) printf("\nLista cancellata correttamente\n");
+                else printf("\nErrore durante la cancellazione;\n");
+                break;
+            }
         }
     }
+    free(lista);
     return 0;
 }
 
@@ -55,5 +63,6 @@ void stampaMenu(){
     printf("\ta)Inserisci elementi in testa;\n");
     printf("\tb)Inserisci elementi in coda;\n");
     printf("\tf)Stampa lista;\n");
+    printf("\ti)Elimina l'intera lista;\n");
     printf("\tz)Termina programma;\n");
 }

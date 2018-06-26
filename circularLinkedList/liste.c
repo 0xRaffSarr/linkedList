@@ -66,7 +66,6 @@ void insInCoda(struct nodo *lista,int k){
         tmp->prev = last;
         lista->prev = tmp;
         tmp->next = lista;
-
     }
 }
 //Stampa una lista circolare
@@ -82,5 +81,17 @@ void stampaLista(struct nodo *lista){
             tmp = tmp->next;
         }
         printf("\n");
+    }
+}
+/*
+Cancella l'intera lista tranne l'elemento fittizio
+*/
+void cancellaLista(struct nodo *lista){
+    struct nodo *tmp = lista->next;
+    while(tmp!=lista){
+        lista->next = tmp->next;
+        tmp->next->prev = lista;
+        free(tmp);
+        tmp = lista->next;
     }
 }
