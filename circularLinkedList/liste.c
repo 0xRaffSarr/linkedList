@@ -128,3 +128,18 @@ void cancellaElemento(struct nodo *lista,int k){
         top = top->next;
     }
 }
+
+struct nodo *swap(struct nodo *tmp1,struct nodo *tmp2){
+    //struct nodo *tmp3;
+    (tmp2->prev)->next = tmp2->next;
+    (tmp2->next)->prev = tmp2->prev;
+
+    tmp2->next = tmp1;
+    tmp2->prev = tmp1->prev;
+
+    (tmp1->prev)->next = tmp2;
+    tmp1->prev = tmp2;
+    return tmp2;
+}
+
+/*
