@@ -27,6 +27,8 @@ void cancellaLista(struct nodo *);
 //cancella un elemento e le sue ripetiozioni
 void cancellaElemento(struct nodo*,int);
 //ordina una lista in ordine crescente
-struct nodo *ordinaCrescente(struct nodo*);
+void ordinaCrescente(struct nodo*);
+//ordina una lista in ordine crescente
+void ordinaDecrescente(struct nodo*);
 
 #endif
