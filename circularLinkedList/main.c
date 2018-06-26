@@ -15,7 +15,7 @@ int main(){
 
     while(op != 'z'){
         stampaMenu();
-        printf("\tScegli l'iperazione da eseguire: ");
+        printf("\tScegli l'operazione da eseguire: ");
         scanf("\n%c",&op);
 
         switch(op){
