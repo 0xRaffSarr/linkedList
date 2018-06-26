@@ -30,5 +30,6 @@ void cancellaElemento(struct nodo*,int);
 void ordinaCrescente(struct nodo*);
 //ordina una lista in ordine crescente
 void ordinaDecrescente(struct nodo*);
-
+//cerca un elemento nella lista
+int cercaElemento(struct nodo *,int);
 #endif

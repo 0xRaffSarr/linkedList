@@ -180,3 +180,16 @@ void ordinaDecrescente(struct nodo *top){
     }
     return;
 }
+/*
+La vunzione cerca un elemento all'interno della lista
+restituisce 1 se lo trova 0 altrimenti
+*/
+int cercaElemento(struct nodo *lista, int k){
+    struct nodo *tmp = lista->next;
+    int ris = 0;
+    while(tmp != lista && ris == 0){
+        if(tmp->data == k) ris = 1;
+        tmp = tmp->next;
+    }
+    return ris;
+}

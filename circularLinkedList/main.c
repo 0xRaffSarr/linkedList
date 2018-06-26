@@ -74,6 +74,18 @@ int main(){
                 cancellaElemento(lista,x);
                 break;
             }
+            case 'h':{
+                printf("Inserisci l'elemento da cercare: ");
+                scanf("%d",&x);
+
+                if(cercaElemento(lista,x)){
+                    printf("\nL'elemento cercato e' presente nella lista;\n");
+                }
+                else{
+                    printf("\nL'elemento cercato non e' presente nella lista;\n");
+                }
+                break;
+            }
             case 'i':{
                 printf("Cancello la lista ...\n");
                 cancellaLista(lista);
@@ -97,6 +109,7 @@ void stampaMenu(){
     printf("\te)Ordina la funzione in ordine decrescente;\n");
     printf("\tf)Stampa lista;\n");
     printf("\tg)Elimina elemento;\n");
+    printf("\th)Cerca un elemento;\n");
     printf("\ti)Elimina l'intera lista;\n");
     printf("\tz)Termina programma;\n");
 }
