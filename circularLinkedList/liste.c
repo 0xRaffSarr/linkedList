@@ -9,7 +9,8 @@ Restituisce 0 se la lista non è vuota 1 se la lista è vuota;
 */
 int isEmpty(struct nodo *lista){
     int res = 0;
-    if(lista->next == lista->next->next) res = 1;
+    if(lista->next == lista) res = 1;
+    return res;
 }
 
 //Crea una lista contenente unicamente il valore sentinella
