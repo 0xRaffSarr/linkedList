@@ -15,7 +15,7 @@ int isEmpty(struct nodo *);
 //Crea una lista costituita unicamente dal valore sentinella
 struct nodo *creaLista();
 //Inserisce un elemento in testa alla lista
-struct nodo *insInTesta(struct nodo *,int );
+void insInTesta(struct nodo *,int );
 //Stampa una lista circolare
 void stampaLista(struct nodo *);
 

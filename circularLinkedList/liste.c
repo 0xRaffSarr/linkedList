@@ -42,7 +42,7 @@ void stampaLista(struct nodo *lista){
 La procedura inserisce un elemento in testa sia che la lista sia vuota, sia che la lista abbia gia altri elementi
 Viene utilizzata la funzione isEmpty per semplificare il controllo
 */
-struct nodo *insInTesta(struct nodo *lista,int k){
+void insInTesta(struct nodo *lista,int k){
     struct nodo *top = NULL;
     struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo));
     tmp->data = k;//inizializzo il valore del nuovo elemento
@@ -60,5 +60,5 @@ struct nodo *insInTesta(struct nodo *lista,int k){
         tmp->next = top;
         lista->next = tmp;
     }
-    return lista;
+    return;
 }
