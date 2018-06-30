@@ -29,18 +29,6 @@ struct nodo *addTesta(struct nodo *top,int k){
     return top;
 }
 /*
-La funzione rapprenseta una falsa ricorsione o meglio una ricorsione in coda per inserire più elementi in testa
-*/
-struct nodo *addTestaMultiplo(struct nodo *top,int n){
-    int x = 0;
-    if(n>0){
-        scanf("%d",&x);
-        top = addTesta(top,x);
-        top = addTestaMultiplo(top,n-1);
-    }
-    return top;
-}
-/*
 Aggiunge un elemento in coda
 */
 struct nodo *addCoda(struct nodo* top,int k){
@@ -52,18 +40,6 @@ struct nodo *addCoda(struct nodo* top,int k){
     else{
         tmp = addCoda(top->next,k);
         top->next = tmp;
-    }
-    return top;
-}
-/*
-La funzione rapprenseta una falsa ricorsione o meglio una ricorsione in coda per inserire più elementi in coda
-*/
-struct nodo *addCodaMultiplo(struct nodo *top,int n){
-    int x = 0;
-    if(n>0){
-        scanf("%d",&x);
-        top = addCoda(top,x);
-        top = addCodaMultiplo(top,n-1);
     }
     return top;
 }
@@ -89,18 +65,6 @@ struct nodo *addInMezzo(struct nodo *top,int k){
         tmp = creaNodo(k);
         tmp->next = pre->next;
         pre->next = tmp;
-    }
-    return top;
-}
-/*
-La funzione rapprenseta una falsa ricorsione o meglio una ricorsione in coda per inserire più elementi in mezzo alla lista
-*/
-struct nodo *addInMezzoMultiplo(struct nodo *top,int n){
-    int x = 0;
-    if(n>0){
-        scanf("%d",&x);
-        top = addInMezzo(top,x);
-        top = addInMezzoMultiplo(top,n-1);
     }
     return top;
 }
