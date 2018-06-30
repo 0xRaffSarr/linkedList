@@ -16,11 +16,8 @@ struct nodo *addTesta(struct nodo*,int);
 struct nodo *addCoda(struct nodo*,int);
 //aggiunge un elemento in mezzo alla lista
 struct nodo *addInMezzo(struct nodo*,int);
-struct nodo *addInMezzoMultiplo(struct nodo*,int);
 //cancella tutti gli elementi della liste e libera la memoria
 struct nodo *liberaMemoria(struct nodo*);
-struct nodo *addTestaMultiplo(struct nodo*,int);
-struct nodo *addCodaMultiplo(struct nodo *,int);
 //odina la lista in ordine crescente
 struct nodo *ordinaCrescente(struct nodo *);
 //ordina una lista in ordine ordinaDecrescente

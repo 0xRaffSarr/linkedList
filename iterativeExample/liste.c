@@ -71,15 +71,6 @@ struct nodo *addInMezzo(struct nodo *top,int k){
     return top;
 }
 
-
-struct nodo *addInMezzoMultiplo(struct nodo *top, int n){
-    int i = 0, x = 0;
-    for(i=0;i<n;i++){
-        scanf("%d",&x);
-        top = addInMezzo(top,x);
-    }
-    return top;
-}
 /*
 La funzione cancella tutti gli elementi di una lista
 */
@@ -108,26 +99,6 @@ void stampaLista(struct nodo *top){
         }
         printf("\n\n");
     }
-}
-
-
-struct nodo *addTestaMultiplo(struct nodo *top, int  n){
-    int i = 0, x = 0;
-    for(i=0;i<n;i++){
-        scanf("%d",&x);
-        top = addTesta(top,x);
-    }
-    return top;
-}
-
-
-struct nodo *addCodaMultiplo(struct nodo *top, int  n){
-    int i = 0, x = 0;
-    for(i=0;i<n;i++){
-        scanf("%d",&x);
-        top = addCoda(top,x);
-    }
-    return top;
 }
 /*
 ordina una lista in ordine crescente, creando una nuva lista semplice

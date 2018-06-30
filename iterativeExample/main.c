@@ -10,7 +10,7 @@ void stampaMenu();
 
 int main(){
     struct nodo *lista = NULL;
-    int i = 0,dim = 0;
+    int i = 0,dim = 0,x = 0;
     char c = 0;
 
     while(c!='z'){
@@ -21,19 +21,21 @@ int main(){
         printf("\n\n");
         switch(c){
             case 'a':{
-                while(dim<=0){
-                    printf("Inserisci il numero di elementi da inserire: ");
-                    scanf("%d",&dim);
+                printf("Inserisci il numero di elementi da inserire: ");
+                scanf("%d",&dim);
+                for(i=0;i<dim;i++){
+                    scanf("%d",&x);
+                    lista = addTesta(lista,x);
                 }
-                lista = addTestaMultiplo(lista,dim);
                 break;
             }
             case 'b':{
-                while(dim<=0){
-                    printf("Inserisci il numero di elementi da inserire: ");
-                    scanf("%d",&dim);
+                printf("Inserisci il numero di elementi da inserire: ");
+                scanf("%d",&dim);
+                for(i=0;i<dim;i++){
+                    scanf("%d",&x);
+                    lista = addCoda(lista,x);
                 }
-                lista = addCodaMultiplo(lista,dim);
                 break;
             }
             case 'c':{
