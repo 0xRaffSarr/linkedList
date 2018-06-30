@@ -6,6 +6,14 @@ Raffaele Sarracino
 
 #include "liste.h"
 
+void swap(struct nodo *tmp1,struct nodo *tmp2){
+    struct nodo *tmp3 = tmp2->next;
+    tmp2->next = tmp3->next;
+    tmp3->next = tmp1->next;
+    tmp1->next = tmp3;
+    //return tmp1;
+}
+
 struct nodo *creaNodo(int x){
     struct nodo *tmp = (struct nodo *) malloc(sizeof(struct nodo));
     tmp -> k = x;
@@ -123,21 +131,10 @@ struct nodo *addCodaMultiplo(struct nodo *top, int  n){
 }
 
 struct nodo *ordinaCrescente(struct nodo *top){
+    struct nodo *posPre = top;
+    struct nodo *curPre = NULL;
     struct nodo *tmp = NULL;
-    struct nodo *rmp = top;
 
-    while(rmp != NULL){
-        tmp = rmp;
-        while(tmp != NULL){
-            if(rmp->k>tmp->k){
-                rmp->k += tmp->k;
-                tmp->k = rmp->k - tmp->k;
-                rmp->k = rmp->k - tmp->k;
-            }
-            tmp = tmp->next;
-        }
-        rmp = rmp->next;
-    }
     return top;
 }
 
