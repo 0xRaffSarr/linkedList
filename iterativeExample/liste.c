@@ -5,23 +5,18 @@ Raffaele Sarracino
 #include <stdlib.h>
 
 #include "liste.h"
-
-void swap(struct nodo *tmp1,struct nodo *tmp2){
-    struct nodo *tmp3 = tmp2->next;
-    tmp2->next = tmp3->next;
-    tmp3->next = tmp1->next;
-    tmp1->next = tmp3;
-    //return tmp1;
-}
-
+/*
+crea un nodo e setta il next a NULL
+*/
 struct nodo *creaNodo(int x){
     struct nodo *tmp = (struct nodo *) malloc(sizeof(struct nodo));
     tmp -> k = x;
     tmp -> next = NULL;
     return tmp;
 }
-
-
+/*
+aggiunge un elemento in testa alla lista, sia che essa sia vuota sia che abbia altri elementi
+*/
 struct nodo *addTesta(struct nodo *top,int x){
     struct nodo *tmp = NULL;
     if(top == NULL){
@@ -34,7 +29,9 @@ struct nodo *addTesta(struct nodo *top,int x){
     }
     return top;
 }
-
+/*
+aggiunge un elemento in coda alla lista, sia che la lista sia vuota sia che abbia altri elementi
+*/
 struct nodo *addCoda(struct nodo *top,int x){
     struct nodo *tmp = NULL;
     if(top == NULL){
@@ -49,8 +46,9 @@ struct nodo *addCoda(struct nodo *top,int x){
     }
     return top;
 }
-
-
+/*
+aggiunge un elemento in ordine all'interno della lista, sia che essa sia vuota sia che contenga altri elementi
+*/
 struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo *tmp = creaNodo(k);
     struct nodo *pre = NULL;
@@ -82,8 +80,9 @@ struct nodo *addInMezzoMultiplo(struct nodo *top, int n){
     }
     return top;
 }
-
-
+/*
+La funzione cancella tutti gli elementi di una lista
+*/
 struct nodo *liberaMemoria(struct nodo *top){
     struct nodo *suc = NULL;
     while(top != NULL){
@@ -93,8 +92,9 @@ struct nodo *liberaMemoria(struct nodo *top){
     }
     return top;
 }
-
-
+/*
+stampa una lista semplice
+*/
 void stampaLista(struct nodo *top){
     if(top == NULL){
         printf("La lista e' vuota;\n\n");
@@ -129,36 +129,75 @@ struct nodo *addCodaMultiplo(struct nodo *top, int  n){
     }
     return top;
 }
-
-struct nodo *ordinaCrescente(struct nodo *top){
-    struct nodo *posPre = top;
-    struct nodo *curPre = NULL;
+/*
+ordina una lista in ordine crescente, creando una nuva lista semplice
+dopo la creazione della nuova lista, elimina la precedente e restituisce la nuova lista in ordine crescente
+*/
+struct nodo *ordinaCrescente(struct nodo *lista){
     struct nodo *tmp = NULL;
+    struct nodo *pre = NULL;
+    struct nodo *top = NULL;
 
-    return top;
-}
-
-
-struct nodo *ordinaDecrescente(struct nodo *top){
-    struct nodo *tmp = NULL;
-    struct nodo *rmp = top;
-
-    while(rmp != NULL){
-        tmp = rmp;
-        while(tmp != NULL){
-            if(rmp->k<tmp->k){
-                rmp->k += tmp->k;
-                tmp->k = rmp->k - tmp->k;
-                rmp->k = rmp->k - tmp->k;
-            }
-            tmp = tmp->next;
+    while(lista != NULL){
+        tmp = creaNodo(lista->k);
+        if(top == NULL){
+            top = tmp;
         }
-        rmp = rmp->next;
+        else if (top->k > lista->k) {
+            tmp->next = top;
+            top = tmp;
+        }
+        else{
+            pre = top;
+            while(pre->next != NULL && pre->next->k<lista->k){
+                pre = pre->next;
+            }
+            tmp->next = pre->next;
+            pre->next = tmp;
+        }
+        lista = lista->next;
     }
-    return top;
+    liberaMemoria(lista);
+    lista = top;
+    return lista;
 }
+/*
+ordina una lista in ordine decrescente, creando una nuva lista semplice
+dopo la creazione della nuova lista, elimina la precedente e restituisce la nuova lista in ordine decrescente
+*/
+struct nodo *ordinaDecrescente(struct nodo *lista){
+    struct nodo *tmp = NULL;
+    struct nodo *pre = NULL;
+    struct nodo *top = NULL;
 
-
+    while(lista != NULL){
+        tmp = creaNodo(lista->k);
+        if(top == NULL){
+            top = tmp;
+        }
+        else if (top->k < lista->k) {
+            tmp->next = top;
+            top = tmp;
+        }
+        else{
+            pre = top;
+            while(pre->next != NULL && pre->next->k>lista->k){
+                pre = pre->next;
+            }
+            tmp->next = pre->next;
+            pre->next = tmp;
+        }
+        lista = lista->next;
+    }
+    liberaMemoria(lista);
+    lista = top;
+    return lista;
+}
+/*
+cerca un elemento all'interno della stampaLista
+    restituisce 0 se l'elemento non è presente nella stampaLista;
+        1 se l'elemento è presente nella lista;
+*/
 int cercaElemento(struct nodo *top,int k){
     int trovato = 0;
 
@@ -168,7 +207,9 @@ int cercaElemento(struct nodo *top,int k){
     }
     return trovato;
 }
-
+/*
+cancella un elemento e tutte le sue ripetizioni all'interno di una lista
+*/
 struct nodo *cancellaElemento(struct nodo *lista, int k){
     struct nodo *suc = lista;
     struct nodo *pre = NULL;
