@@ -41,7 +41,10 @@ int main(){
             case 'c':{
                 printf("Inserisci il numero di elementi da inserire: ");
                 scanf("%d",&dim);
-                lista = addInMezzoMultiplo(lista,dim);
+                for(i=0;i<dim;i++){
+                    scanf("%d",&x);
+                    lista = addInMezzo(lista,x);
+                }
                 break;
             }
             case 'd':{
