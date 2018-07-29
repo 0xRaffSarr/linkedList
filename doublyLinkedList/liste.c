@@ -137,7 +137,9 @@ struct nodo *cancellaElemento(struct nodo*lista,int k){
     return lista;
 }
 //ordina una lista in ordine crescente
-void ordinaCrescente(struct nodo*a){};
+void ordinaCrescente(struct nodo*lista){
+
+}
 //ordina una lista in ordine crescente
 void ordinaDecrescente(struct nodo*a){};
 //cerca un elemento nella lista
