@@ -52,7 +52,7 @@ int main(){
             }
             case 'd':{
                 printf("Ordino la lista in ordine crescente...\n");
-                ordinaCrescente(lista);
+                lista = ordinaCrescente(lista);
                 stampaLista(lista);
                 printf("\n");
                 break;

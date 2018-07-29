@@ -137,8 +137,28 @@ struct nodo *cancellaElemento(struct nodo*lista,int k){
     return lista;
 }
 //ordina una lista in ordine crescente
-void ordinaCrescente(struct nodo*lista){
+struct nodo *ordinaCrescente(struct nodo*lista){
+    struct nodo *top = lista;
+    struct nodo *sub = NULL;
+    struct nodo *tmp = NULL;
 
+    while(top != NULL){
+        sub = top->next;
+        while(sub->next != NULL){
+            if(top->data > sub->data){
+                tmp = top;
+                top->next->prev = top->prev;
+                top = top->next;
+                tmp->next = sub->next;
+                tmp->prev = sub;
+                sub->next->prev = tmp;
+                sub->next = tmp;
+            }
+            sub = sub->next;
+        }
+        top = top->next;
+    }
+    return lista;
 }
 //ordina una lista in ordine crescente
 void ordinaDecrescente(struct nodo*a){};

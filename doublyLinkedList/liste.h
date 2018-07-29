@@ -27,7 +27,7 @@ struct nodo *cancellaLista(struct nodo *);
 //cancella un elemento e le sue ripetiozioni
 struct nodo *cancellaElemento(struct nodo*,int);
 //ordina una lista in ordine crescente
-void ordinaCrescente(struct nodo*);
+struct nodo *ordinaCrescente(struct nodo*);
 //ordina una lista in ordine crescente
 void ordinaDecrescente(struct nodo*);
 //cerca un elemento nella lista
