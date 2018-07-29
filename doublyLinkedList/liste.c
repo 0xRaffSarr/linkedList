@@ -108,7 +108,34 @@ struct nodo *cancellaLista(struct nodo *lista){
     return lista;
 };
 //cancella un elemento e le sue ripetiozioni
-void cancellaElemento(struct nodo*a,int b){};
+struct nodo *cancellaElemento(struct nodo*lista,int k){
+    struct nodo *tmp = NULL;
+    struct nodo *elem = NULL;
+    while (lista!=NULL && lista->data == k) {
+        tmp = lista->next;
+        free(lista);
+        if(tmp != NULL){
+            tmp->prev = NULL;
+        }
+        lista = tmp;
+    }
+
+    if(lista != NULL){
+        tmp = lista->next;
+        while(tmp!=NULL){
+            if(tmp->data == k){
+                elem = tmp;
+                tmp->prev->next = tmp->next;
+                if(tmp->next != NULL){
+                    tmp->next->prev = tmp->prev;
+                }
+                free(elem);
+            }
+            tmp = tmp->next;
+        }
+    }
+    return lista;
+}
 //ordina una lista in ordine crescente
 void ordinaCrescente(struct nodo*a){};
 //ordina una lista in ordine crescente

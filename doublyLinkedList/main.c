@@ -71,7 +71,7 @@ int main(){
             case 'g':{
                 printf("Inserisci l'elemento da eliminare: ");
                 scanf("%d",&x);
-                cancellaElemento(lista,x);
+                lista = cancellaElemento(lista,x);
                 break;
             }
             case 'h':{
@@ -95,8 +95,7 @@ int main(){
             }
         }
     }
-    cancellaLista(lista);
-    free(lista);
+    lista = cancellaLista(lista);
     return 0;
 }
 
