@@ -11,9 +11,9 @@ struct nodo{
 };
 
 //verifica se la lista è vuota oppure no, usata per semplicità
-int isEmpty(struct nodo *);
+//int isEmpty(struct nodo *);
 //Crea una lista costituita unicamente dal valore sentinella
-struct nodo *creaLista(int);
+struct nodo *creaNodo(int);
 //Inserisce un elemento in testa alla lista
 void insInTesta(struct nodo *,int );
 //Inserisce un elemento in coda alla lista o in testa se la lista è vuota
