@@ -11,7 +11,7 @@ void stampaMenu();
 int main(){
     char op = 'x';
     int dim = 0,i = 0,x = 0;
-    struct nodo *lista = creaLista();
+    struct nodo *lista = NULL;
 
     while(op != 'z'){
         stampaMenu();
