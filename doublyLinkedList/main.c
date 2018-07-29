@@ -46,7 +46,7 @@ int main(){
                 scanf("%d",&dim);
                 for(i=0;i<dim;i++){
                     scanf("%d",&x);
-                    insInOrdine(lista,x);
+                    lista = insInOrdine(lista,x);
                 }
                 break;
             }

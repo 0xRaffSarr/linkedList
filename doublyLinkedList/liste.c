@@ -57,7 +57,33 @@ struct nodo *insInCoda(struct nodo *lista,int k){
     return lista;
 }
 //inserisce un elemento in ordine oppure in testa se la lista è vuota
-void insInOrdine(struct nodo *a,int b){};
+struct nodo *insInOrdine(struct nodo *lista,int k){
+    struct nodo *tmp = creaNodo(k);
+    struct nodo *pre = NULL;
+
+    if(isEmpty(lista)){
+        lista = tmp;
+    }
+    else if(lista->data > k){
+        tmp->next = lista;
+        tmp->prev = lista->prev;
+        lista->prev = tmp;
+        lista = tmp;
+    }
+    else{
+        pre = lista;
+        while(pre->next != NULL && pre->next->data < k){
+            pre = pre->next;
+        }
+        tmp->prev = pre;
+        tmp->next = pre->next;
+        if(pre->next != NULL){
+            pre->next->prev = tmp;
+        }
+        pre->next = tmp;
+    }
+    return lista;
+}
 //Stampa una lista circolare
 void stampaLista(struct nodo *lista){
     if(lista == NULL){

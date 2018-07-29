@@ -19,7 +19,7 @@ struct nodo *insInTesta(struct nodo *,int );
 //Inserisce un elemento in coda alla lista o in testa se la lista è vuota
 struct nodo *insInCoda(struct nodo *,int);
 //inserisce un elemento in ordine oppure in testa se la lista è vuota
-void insInOrdine(struct nodo *,int);
+struct nodo *insInOrdine(struct nodo *,int);
 //Stampa una lista circolare
 void stampaLista(struct nodo *);
 //canella l'intera lista tranne l'elemento sentinella
