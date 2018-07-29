@@ -36,7 +36,7 @@ int main(){
 
                 for(i=0;i<dim;i++){
                     scanf("%d",&x);
-                    insInCoda(lista,x);
+                    lista = insInCoda(lista,x);
                 }
 
                 break;

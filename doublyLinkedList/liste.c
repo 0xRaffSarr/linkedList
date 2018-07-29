@@ -14,7 +14,6 @@ int isEmpty(struct nodo *lista){
     }
     return r;
 };
-
 //crea un nuovo elemento/nodo
 struct nodo *creaNodo(int k){
     struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo));
@@ -23,7 +22,7 @@ struct nodo *creaNodo(int k){
     tmp->prev = NULL;
     return tmp;
 }
-//Aggiuunge un elemento in testa alla lista;
+//Aggiunge un elemento in testa alla lista;
 struct nodo *insInTesta(struct nodo *lista,int k){
     struct nodo *tmp = creaNodo(k);
     struct nodo *top = lista;
@@ -38,12 +37,25 @@ struct nodo *insInTesta(struct nodo *lista,int k){
         lista = tmp;
 
     }
-    //return lista;
+    return lista;
 }
+//Aggiunge un elemento in coda alla nLista
+struct nodo *insInCoda(struct nodo *lista,int k){
+    struct nodo *tmp = creaNodo(k);
+    struct nodo *top = lista;
 
-
-//Inserisce un elemento in coda alla lista o in testa se la lista è vuota
-void insInCoda(struct nodo *a,int b){};
+    if(isEmpty(lista)){
+        lista = tmp;
+    }
+    else{
+        while(top->next != NULL){
+            top = top->next;
+        }
+        tmp->prev = top;
+        top->next = tmp;
+    }
+    return lista;
+}
 //inserisce un elemento in ordine oppure in testa se la lista è vuota
 void insInOrdine(struct nodo *a,int b){};
 //Stampa una lista circolare
