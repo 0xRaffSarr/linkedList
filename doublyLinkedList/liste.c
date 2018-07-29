@@ -91,7 +91,7 @@ void stampaLista(struct nodo *lista){
     }
     else{
         while(lista != NULL){
-            printf("%d ",lista->data);
+            printf("%4d",lista->data);
             lista = lista->next;
         }
         printf("\n");
