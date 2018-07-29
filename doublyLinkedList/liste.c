@@ -6,7 +6,16 @@ Raffaele Sarracino
 
 #include "liste.h"
 
+//verifica se la lista è vuota oppure no, usata per semplicità
+int isEmpty(struct nodo *lista){
+    int r = 1;
+    if(lista != NULL){
+        r = 0;
+    }
+    return r;
+};
 
+//crea un nuovo elemento/nodo
 struct nodo *creaNodo(int k){
     struct nodo *tmp = (struct nodo *)malloc(sizeof(struct nodo));
     tmp->data = k;
@@ -14,25 +23,22 @@ struct nodo *creaNodo(int k){
     tmp->prev = NULL;
     return tmp;
 }
-
-void insInTesta(struct nodo *lista,int k){
+//Aggiuunge un elemento in testa alla lista;
+struct nodo *insInTesta(struct nodo *lista,int k){
     struct nodo *tmp = creaNodo(k);
-    struct nodo *top = NULL;
+    struct nodo *top = lista;
 
-    if(lista == NULL){
+    if(isEmpty(lista)){
         lista = tmp;
     }
     else{
-        top = lista;
-        while(top != NULL && top->data < k){
-            top = top->next;
-        }
-        tmp->next = top->next;
-        tmp->prev = top;
-        top->next = tmp;
-        tmp->next->prev = tmp;
+        tmp->prev = top->prev;
+        tmp->next = top;
+        top->prev = tmp;
+        lista = tmp;
+
     }
-    lista = top;
+    //return lista;
 }
 
 
