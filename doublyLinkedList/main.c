@@ -88,7 +88,7 @@ int main(){
             }
             case 'i':{
                 printf("Cancello la lista ...\n");
-                cancellaLista(lista);
+                lista = cancellaLista(lista);
                 if(lista==NULL) printf("\nLista cancellata correttamente\n");
                 else printf("\nErrore durante la cancellazione;\n");
                 break;

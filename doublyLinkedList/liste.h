@@ -20,10 +20,10 @@ struct nodo *insInTesta(struct nodo *,int );
 struct nodo *insInCoda(struct nodo *,int);
 //inserisce un elemento in ordine oppure in testa se la lista è vuota
 struct nodo *insInOrdine(struct nodo *,int);
-//Stampa una lista circolare
+//Stampa una lista doppiamente linkata
 void stampaLista(struct nodo *);
-//canella l'intera lista tranne l'elemento sentinella
-void cancellaLista(struct nodo *);
+//canella l'intera lista
+struct nodo *cancellaLista(struct nodo *);
 //cancella un elemento e le sue ripetiozioni
 void cancellaElemento(struct nodo*,int);
 //ordina una lista in ordine crescente

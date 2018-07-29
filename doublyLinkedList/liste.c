@@ -84,7 +84,7 @@ struct nodo *insInOrdine(struct nodo *lista,int k){
     }
     return lista;
 }
-//Stampa una lista circolare
+//Stampa una lista doppiamente linkata
 void stampaLista(struct nodo *lista){
     if(lista == NULL){
         printf("\tLa lista è vuota;\n");
@@ -96,9 +96,17 @@ void stampaLista(struct nodo *lista){
         }
         printf("\n");
     }
+}
+//canella l'intera lista
+struct nodo *cancellaLista(struct nodo *lista){
+    struct nodo *suc = NULL;
+    while(lista != NULL){
+        suc = lista->next;
+        free(lista);
+        lista = suc;
+    }
+    return lista;
 };
-//canella l'intera lista tranne l'elemento sentinella
-void cancellaLista(struct nodo *a){};
 //cancella un elemento e le sue ripetiozioni
 void cancellaElemento(struct nodo*a,int b){};
 //ordina una lista in ordine crescente
