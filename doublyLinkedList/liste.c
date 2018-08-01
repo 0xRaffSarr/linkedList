@@ -138,25 +138,39 @@ struct nodo *cancellaElemento(struct nodo*lista,int k){
 }
 //ordina una lista in ordine crescente
 struct nodo *ordinaCrescente(struct nodo*lista){
-    struct nodo *top = lista;
-    struct nodo *sub = NULL;
+    struct nodo *corr = lista;
+    struct nodo *succ = NULL;
     struct nodo *tmp = NULL;
 
-    while(top != NULL){
-        sub = top->next;
-        while(sub->next != NULL){
-            if(top->data > sub->data){
-                tmp = top;
-                top->next->prev = top->prev;
-                top = top->next;
-                tmp->next = sub->next;
-                tmp->prev = sub;
-                sub->next->prev = tmp;
-                sub->next = tmp;
+    while(corr != NULL){
+        succ = corr->next;
+        while(succ != NULL){
+            if(corr->data > succ->data){
+                if(corr->prev == NULL){ //rimuovo l'elemento dalla posizione attuale ma non lo cancello, se in testa
+                    tmp = corr;
+                    corr = corr->next;
+                    corr->prev = NULL;
+                    lista = corr;
+                }
+                else{ //rimuovo l'elemento dalla posizione attuale ma non lo cancello, se in mezzo alla lista
+                    tmp = corr;
+                    corr->prev->next = tmp->next;
+                    tmp->next->prev = tmp->prev;
+                    corr = corr->next;
+                }
+                /*
+                Inserisco ora l'elemento nella posizione giusta, ovvero dopo succ
+                */
+                tmp->next = succ->next;
+                if(succ->next != NULL){ //se vi è un altro elemento dopo succ setto il suo prev
+                    succ->next->prev = tmp;
+                }
+                tmp->prev = succ;
+                succ->next = tmp;
             }
-            sub = sub->next;
+            succ = succ->next;
         }
-        top = top->next;
+        corr = corr->next;
     }
     return lista;
 }
