@@ -213,4 +213,13 @@ struct nodo *ordinaDecrescente(struct nodo *lista){
     return lista;
 }
 //cerca un elemento nella lista
-int cercaElemento(struct nodo *a,int b){};
+int cercaElemento(struct nodo *lista,int k){
+    int ris = 0;
+    while(lista != NULL && ris == 0){
+        if(lista->data == k){
+            ris = 1;
+        }
+        lista = lista->next;
+    }
+    return ris;
+}
