@@ -5,7 +5,7 @@ Gli esempi sono stati sviluppati secondo due modalità:
 - Iterativa;
 - Ricorsiva;
 
-Vencono presentati tre tipi di Linked List:
+Vengono presentati tre tipi di Linked List:
 1. Liste linkate semplici;
 1. Liste doppiamente linkate;
 1. Liste doppiamente linkate con elemento fittizio(Circolari);
