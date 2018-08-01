@@ -59,7 +59,7 @@ int main(){
             }
             case 'e':{
                 printf("Ordino la lista in ordine decrescente...\n");
-                ordinaDecrescente(lista);
+                lista = ordinaDecrescente(lista);
                 stampaLista(lista);
                 printf("\n");
                 break;
@@ -105,7 +105,7 @@ void stampaMenu(){
     printf("\tb)Inserisci elementi in coda;\n");
     printf("\tc)Inserisci elementi in ordine;\n");
     printf("\td)Ordina la lista in ordine crescente;\n");
-    printf("\te)Ordina la funzione in ordine decrescente;\n");
+    printf("\te)Ordina la lista in ordine decrescente;\n");
     printf("\tf)Stampa lista;\n");
     printf("\tg)Elimina elemento;\n");
     printf("\th)Cerca un elemento;\n");

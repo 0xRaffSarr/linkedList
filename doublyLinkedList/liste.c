@@ -175,6 +175,42 @@ struct nodo *ordinaCrescente(struct nodo*lista){
     return lista;
 }
 //ordina una lista in ordine crescente
-void ordinaDecrescente(struct nodo*a){};
+struct nodo *ordinaDecrescente(struct nodo *lista){
+    struct nodo *corr = lista;
+    struct nodo *succ = NULL;
+    struct nodo *tmp = NULL;
+
+    while(corr != NULL){
+        succ = corr->next;
+        while(succ != NULL){
+            if(corr->data < succ->data){
+                if(corr->prev == NULL){ //rimuovo l'elemento dalla posizione attuale ma non lo cancello, se in testa
+                    tmp = corr;
+                    corr = corr->next;
+                    corr->prev = NULL;
+                    lista = corr;
+                }
+                else{ //rimuovo l'elemento dalla posizione attuale ma non lo cancello, se in mezzo alla lista
+                    tmp = corr;
+                    corr->prev->next = tmp->next;
+                    tmp->next->prev = tmp->prev;
+                    corr = corr->next;
+                }
+                /*
+                Inserisco ora l'elemento nella posizione giusta, ovvero dopo succ
+                */
+                tmp->next = succ->next;
+                if(succ->next != NULL){ //se vi è un altro elemento dopo succ setto il suo prev
+                    succ->next->prev = tmp;
+                }
+                tmp->prev = succ;
+                succ->next = tmp;
+            }
+            succ = succ->next;
+        }
+        corr = corr->next;
+    }
+    return lista;
+}
 //cerca un elemento nella lista
 int cercaElemento(struct nodo *a,int b){};
