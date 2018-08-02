@@ -9,7 +9,7 @@ Raffaele Sarracino
 crea un nodo e setta il next a NULL
 */
 struct nodo *creaNodo(int x){
-    struct nodo *tmp = (struct nodo *) malloc(sizeof(struct nodo));
+    struct nodo *tmp = (struct nodo *) malloc(sizeof(struct nodo)); //alloco memoria dinamica per la creazione del nodo
     tmp -> k = x;
     tmp -> next = NULL;
     return tmp;
@@ -19,10 +19,10 @@ aggiunge un elemento in testa alla lista, sia che essa sia vuota sia che abbia a
 */
 struct nodo *addTesta(struct nodo *top,int x){
     struct nodo *tmp = NULL;
-    if(top == NULL){
+    if(top == NULL){    //se la lista è vuota inserisco setto lista uguale al nodo appena creato
        top = creaNodo(x);
     }
-    else{
+    else{   //nel caso in cui la lista non sia vuota setto il next dal nodo appena creato, uguale al primo elemento della lista e aggiorno la lista
         tmp = creaNodo(x);
         tmp -> next = top;
         top = tmp;
@@ -34,10 +34,10 @@ aggiunge un elemento in coda alla lista, sia che la lista sia vuota sia che abbi
 */
 struct nodo *addCoda(struct nodo *top,int x){
     struct nodo *tmp = NULL;
-    if(top == NULL){
+    if(top == NULL){    //in caso di lista vuota aggiungo semplicemente il nodo
         top = creaNodo(x);
     }
-    else{
+    else{   //se la lista non è vuota, scorro fino all'ultimo elemento e aggiungo il nuovo nodo
         tmp = top;
         while(tmp->next!=NULL){
             tmp = tmp->next;
@@ -53,14 +53,14 @@ struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo *tmp = creaNodo(k);
     struct nodo *pre = NULL;
 
-    if(top == NULL){
+    if(top == NULL){    //se la lista è vuota aggiungo semplicemente il nuovo elemento
         top = tmp;
     }
-    else if (top->k > k) {
+    else if (top->k > k) {  //se il primo elemento è maggiore dell'elemento da inserire allora faccio un inserimento in testa
         tmp->next = top;
         top = tmp;
     }
-    else{
+    else{   //scorro fino alla posizione esatta dell'elemento
         pre = top;
         while(pre->next != NULL && pre->next->k<k){
             pre = pre->next;
@@ -172,7 +172,7 @@ cerca un elemento all'interno della stampaLista
 int cercaElemento(struct nodo *top,int k){
     int trovato = 0;
 
-    while(top->next!=NULL){
+    while(top->next!=NULL && trovato == 0){ //scorro fino alla fine della lista oppure mi fermo se ho trovato almeno un elemento
         if(top->k==k) trovato = 1;
         top = top->next;
     }
@@ -185,16 +185,16 @@ struct nodo *cancellaElemento(struct nodo *lista, int k){
     struct nodo *suc = lista;
     struct nodo *pre = NULL;
 
-    while(suc != NULL && suc->k == k){
+    while(suc != NULL && suc->k == k){  //cancello gli elementi nel caso in cui si trovino in testa alla lista
         pre = suc;
         suc = suc->next;
         free(pre);
     }
     lista = suc;
-    if(lista != NULL){
+    if(lista != NULL){ //scorro la lista per eliminare aventuali lipetizioni nel mezzo
         pre = lista->next;
         while(suc != NULL){
-            if(suc->k==k){
+            if(suc->k==k){ //se trovo elementi li cancello
                 pre->next = suc->next;
                 free(suc);
                 suc = pre->next;
