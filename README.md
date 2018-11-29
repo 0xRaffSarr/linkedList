@@ -28,3 +28,33 @@ Le funzioni ricorsive saranno svolte cercando di mantenere la stessa linea di qu
 Per tale motivo l'esempio ricorsivo sarà ripresentato cercando di migliorare tali funzioni.
 
 Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quick Sort.
+
+## Indice
+
+1. [Introduzione](#introduzione)
+    1. [Puntatori](#puntatori)
+    1. [Record](#record)
+1. [Linkedlist vs Array di record](#linkedlist-vs-array-di-record)
+1. [Tipi di linkedlist](#tipi-di-linkedlist)
+    1. [Linkedlist semplici](#linkedlist-semplici)
+    1. [Linkedlist doppiamente concatenta](#linkedlist-doppiamente-concatenate)
+    1. [Linkedlist circolari](#linkedlist-circolari)
+1. [Operazioni sulle linkedList](#operazioni-sulle-linkedlist)
+
+## Introduzione
+
+### Puntatori
+
+### Record
+
+## Linkedlist vs Array di record
+
+## Tipi di linkedlist
+
+### Linkedlist semplici
+
+### Linkedlist doppiamente concatenate
+
+### Linkedlist circolari
+
+### Operazioni sulle linkedlist
