@@ -94,7 +94,7 @@ Inoltre, dal momento che il contenuto di un puntatore, non è altro che l'indiri
 
 ```c
 int a = 0;
-int *P = NULL;
+int *P = &a;
 
     scanf("%i\n",p);
 ```
