@@ -88,7 +88,21 @@ int *p;
 *p = a;
 p != &a;
 ```
-Anche quando si utilizzano gli array, inconsapevolmente si sta utilizzando un pontatore. Il nome di un array, non è altro che un puntatore, il quale punta al primo elemento dell'array.
+Anche quando si utilizzano gli array, inconsapevolmente si sta utilizzando un pontatore. Il nome di un array, non è altro che un puntatore, il quale punta al primo elemento dell'array. Quando si accede ad un elemento dell'array, tramite il suo indice, non facciamo altro che eseguire un'operazione di deferenziazione su un puntatore che punta ad una locazione di memoria dove è contenuto il valore desiderato. La stessa operazione, che facciamo mediante l'indicazione dell'indice dell'array, può essere fatta anche attraverso l'utilizzo dell'algebra dei puntatori:
+
+```c
+int A[10] = {0,1,2,3,4,5,6,7,8,9};
+int i = 0;
+    for(i=0;i<10;i++){
+        printf("A[%i] = %i\n",i,A[i] );
+    }
+
+    /* Potremmo scrivere in modo simile */
+
+    for(i=0;i<10;i++){
+        printf("A[%i] = %i\n",i, * (A+i) );
+    }
+```
 
 Inoltre, dal momento che il contenuto di un puntatore, non è altro che l'indirizzo di memoria della variabile puntata, durante le operazioni di input, il puntatore non va indicato nella forma `&P`, ma va indicato come `P`.
 
