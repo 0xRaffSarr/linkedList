@@ -43,11 +43,57 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 
 ## Introduzione
 
+Per poter utilizzare correttamente le liste(`linkedlist`), occorre saper utilizzare i `puntatori` e le strutture(`record`). Le linkedlist, sono il frutto di una combinazione di puntatori e record. A causa della loro flessibilità e facilità su alcune operazioni di gestione, rappresentano una struttura molto importante in alcuni ambiti;
+
 ### Puntatori
+
+I puntatori, essenzialmente possono essere considarti come delle normali variabili, il cui contenuto però è costituito da un indirizzo di memoria. Una variabile puntatore, può puntare unicamente ad una variabile che concorda con il tipo del puntatore stesso;
+
+```c
+float c = 2.5;
+int *p = &c;
+```
+Tale codice, risulta essere errato, in quanto un puntatore di tipo intero, non può puntare ad una variabile di tipo float. Il codice corretto sarebbe stato:
+
+```c
+float c = 2.5;
+float *p = &c;
+```
+Non si può assegnare un valore ad un puntatore, a meno che esso non sia:
+- Il valore `NULL`;
+- Un indirizzo di memoria di una variabile o struttura, mediante l'operatore `&`;
+- A seguito di un'operazione di allocazione dinamica della memoria;
+
+Gli operatori fondamentali dei puntatori sono essenzialmente due, l'operatore `*` e l'operatore `&`
+
+Operatore | Nome | Funzione
+--------- | ---- | ---------
+ `*` | Deferenziazione | Svolge una duplice funzione, in primo luogo serve a definire un puntatore; Serve inoltre ad accedere al valore della variabile puntata;
+ `&` | Indirizzo | L'operatore unario end, serve a recuperare l'indirizzo di memoria di una variabile;
+
+ &Egrave; da ritenersi sbalgiato, considerare il risultato dell'operatore unario `&` come valore della variabile. Il valore restituito da tale operatore, rappresenta l'indirizzo di memoria della variabile e non il valore da essa contenuta;
+ Inoltre, l'operatore di deferenziazione, risulta essere l'opposto dell'operatore indirizzo, per tale motivo se si assegna al puntatore `P`, l'indirizzo di memoria della variabile `A`, l'operazione di deferenziazione sul puntatore P, restituirà il valore contenuto dalla variabile A.
+
+ ```c
+ int a = 4;
+ int *p;
+ p = &a;
+ *p == a;
+ ```
+Non è detto però che sia vero il contrario, infatti se si assegna a `*p` il valore della variabile `a`, il valore di p non sarà `&a`
+
+```c
+int a = 4;
+int *p;
+*p = a;
+p != &a;
+```
+
 
 ### Record
 
 ## Linkedlist vs Array di record
+
 
 ## Tipi di linkedlist
 
