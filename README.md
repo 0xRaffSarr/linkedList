@@ -88,7 +88,17 @@ int *p;
 *p = a;
 p != &a;
 ```
+Anche quando si utilizzano gli array, inconsapevolmente si sta utilizzando un pontatore. Il nome di un array, non è altro che un puntatore, il quale punta al primo elemento dell'array.
 
+Inoltre, dal momento che il contenuto di un puntatore, non è altro che l'indirizzo di memoria della variabile puntata, durante le operazioni di input, il puntatore non va indicato nella forma `&P`, ma va indicato come `P`.
+
+```c
+int a = 0;
+int *P = NULL;
+
+    scanf("%i\n",p);
+```
+In tal caso, il valore in input verrà assegnato alla variabile a; Durante un'operazione di output invece, la variabile puntatore verrà indicata come `*p` per poter stampare il contenuto della variabile a;
 
 ### Record
 
