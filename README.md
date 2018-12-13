@@ -43,7 +43,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 
 ## Introduzione
 
-Per poter utilizzare correttamente le liste(`linkedlist`), occorre saper utilizzare i `puntatori` e le strutture(`record`). Le linkedlist, sono il frutto di una combinazione di puntatori e record. A causa della loro flessibilità e facilità su alcune operazioni di gestione, rappresentano una struttura molto importante in alcuni ambiti;
+Per poter utilizzare correttamente le liste(`linkedlist`), occorre saper utilizzare i `puntatori` e le struct ( `record` ). Le linked list, sono il frutto di una combinazione di puntatori e record. A causa della loro flessibilità e facilità su alcune operazioni di gestione, rappresentano una struttura molto importante in alcuni ambiti;
 
 ### Puntatori
 
@@ -65,7 +65,7 @@ float *p = &c;
 ```
 Non si può assegnare un valore ad un puntatore, a meno che esso non sia:
 - Il valore `NULL`;
-- Un indirizzo di memoria di una variabile o struttura, mediante l'operatore `&`;
+- Un indirizzo di memoria di una variabile o struct, mediante l'operatore `&`;
 - A seguito di un'operazione di allocazione dinamica della memoria;
 
 Gli operatori fondamentali dei puntatori sono essenzialmente due, l'operatore `*` e l'operatore `&`
@@ -121,7 +121,7 @@ In tal caso, il valore in input verrà assegnato alla variabile a; Durante un'op
 
 La dichiarazione di un puntatore, comporta l'allocazione di memoria per la variabile puntatore, ma non per la variabile puntata.
 
-### Record
+### Struct
 
 Gli `struct`, conosciuti anche come `record`, sono un tipo di struttura dati, che
 permette di contenere dati di diversa natura. Attraverso l'utilizzo di una
@@ -165,13 +165,13 @@ In tal caso, la dichiarazione di una variabile di tipo `persona` avviene attrave
     struct persona padre;
     struct persona figlio;
 ```
-L'accesso alle singole varibili della struttura avviene in due modi diversi, a seconda di come la struttura viene utilizzata. Nel coso del semplice utilizzo della struttura, oppure quando la si utilizza come un array, l'accesso avviene mediante la `Dot notation`, ovvero attraverso l'operatore `.`;
+L'accesso alle singole varibili della struct avviene in due modi diversi, a seconda di come la struct viene utilizzata. Nel caso del semplice utilizzo della struct, oppure quando la si utilizza come un array, l'accesso avviene mediante la `Dot notation`, ovvero attraverso l'operatore `.`;
 ```c
     padre.nome = "Mario";
     padre.cognome = "Rossi";
     padre.eta = 40;
 ```
-Non &egrave; possibile definire struct ricorsive, ovvero strutture che contengono la stessa struttura
+Non &egrave; possibile definire struct ricorsive, ovvero struct che contengono la stessa struct
 ```c
 struct persona {
     char nome[10];
