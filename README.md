@@ -165,6 +165,37 @@ In tal caso, la dichiarazione di una variabile di tipo `persona` avviene attrave
     struct persona padre;
     struct persona figlio;
 ```
+L'accesso alle singole varibili della struttura avviene in due modi diversi, a seconda di come la struttura viene utilizzata. Nel coso del semplice utilizzo della struttura, oppure quando la si utilizza come un array, l'accesso avviene mediante la `Dot notation`, ovvero attraverso l'operatore `.`;
+```c
+    padre.nome = "Mario";
+    padre.cognome = "Rossi";
+    padre.eta = 40;
+```
+Non &egrave; possibile definire struct ricorsive, ovvero strutture che contengono la stessa struttura
+```c
+struct persona {
+    char nome[10];
+    char cognome[10];
+    int eta;
+    struct persona F;
+    /* Ciò rappesenta un errore, a meno che F non sia un puntatore ad un'altra struct dello stesso tipo*/
+};
+```
+&Egrave; tuttavia possibile inserire all'interno di una struct, altre struct di diversa natura;
+
+La definizione di una struct, non comporta allocazione di memoria. L'allocazione della memoria avverra solo a seguito della dichiarazione della variabile di tipo struct:
+
+```c
+    struct persona {
+        char nome[10];
+        char cognome[10];
+        int eta;
+    };
+    /* non ho ancora allocato memoria per la variabile interessata */
+
+    struct persona padre; //ho allocato memoria per la variabile padre, di tipo persona
+```
+
 
 ## Linkedlist vs Array di record
 
