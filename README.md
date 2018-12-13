@@ -33,7 +33,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 
 1. [Introduzione](#introduzione)
     1. [Puntatori](#puntatori)
-    1. [Record](#record)
+    1. [Struct](#struct)
 1. [Linkedlist vs Array di record](#linkedlist-vs-array-di-record)
 1. [Tipi di linkedlist](#tipi-di-linkedlist)
     1. [Linkedlist semplici](#linkedlist-semplici)
