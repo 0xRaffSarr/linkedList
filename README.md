@@ -47,7 +47,11 @@ Per poter utilizzare correttamente le liste(`linkedlist`), occorre saper utilizz
 
 ### Puntatori
 
-I puntatori, essenzialmente possono essere considarti come delle normali variabili, il cui contenuto però è costituito da un indirizzo di memoria. Una variabile puntatore, può puntare unicamente ad una variabile che concorda con il tipo del puntatore stesso;
+I puntatori, essenzialmente possono essere considerti come delle normali variabili, il cui contenuto però è costituito da un indirizzo di memoria.
+
+`<tipo> *<nomeVariabile>`
+
+Una variabile puntatore, può puntare unicamente ad una variabile che concorda con il tipo del puntatore stesso;
 
 ```c
 float c = 2.5;
@@ -103,6 +107,7 @@ int i = 0;
         printf("A[%i] = %i\n",i, * (A+i) );
     }
 ```
+La forma `(A+i)`, presuppone che l'indice `i`, come avviene anche per gli array, sia un valore intero;
 
 Inoltre, dal momento che il contenuto di un puntatore, non è altro che l'indirizzo di memoria della variabile puntata, durante le operazioni di input, il puntatore non va indicato nella forma `&P`, ma va indicato come `P`.
 
@@ -112,9 +117,54 @@ int *P = &a;
 
     scanf("%i\n",p);
 ```
-In tal caso, il valore in input verrà assegnato alla variabile a; Durante un'operazione di output invece, la variabile puntatore verrà indicata come `*p` per poter stampare il contenuto della variabile a;
+In tal caso, il valore in input verrà assegnato alla variabile a; Durante un'operazione di output invece, la variabile puntatore verrà indicata come `*p` per poter stampare il contenuto della variabile a.
+
+La dichiarazione di un puntatore, comporta l'allocazione di memoria per la variabile puntatore, ma non per la variabile puntata.
 
 ### Record
+
+Gli `struct`, conosciuti anche come `record`, sono un tipo di struttura dati, che
+permette di contenere dati di diversa natura. Attraverso l'utilizzo di una
+struct, possiamo definire un elenco di variabili, anche di tipo diverso, che possono
+essere raggruppate in un unico blocco di memoria e accessibili con un singolo puntatore.
+
+Nel linguaggio **C**, una struct fa direttamente riferimento ad un blocco contiguo di memoria fisica.
+
+```c
+    struct [structureTag]{
+        Member definition;
+        Member definition;
+        .................
+        Member definition;
+    }[One or more variables];
+```
+Una struct pu&ograve; essere dichiarata in varie parti del corpo del codice e in vari modi. Se la dichiaro
+all'interno del main o all'interno di una procedura, essa sar&agrave; visibile solo all'interno del suo scope.
+Una struct pu&ograve; essere dichiarata come tipo unico, oppure andare a costituire un nuovo tipo di variabile
+essa stessa.
+```c
+    struct {
+        char nome[10];
+        char cognome[10];
+        int eta;
+    } persona;
+```
+In questo caso, abbiamo dichiarato una variabile di tipo struct che ha come nome `persona`, nel caso in cui, ci serve un altra variabile dello stesso tipo, dovremmo riscrivere l'intero codice.
+```c
+    struct persona {
+        char nome[10];
+        char cognome[10];
+        int eta;
+    };
+```
+In questo secondo caso, non abbiamo dichiarato nessuna nuova variabile, ma abbiamo definito solo un nuovo tipo di variabile, che se definito all'esterno delle funzioni, e quindi con scope `globale`, potremmo facilmente dichiarare
+nuove variabili di quel tipo, ovunque esse servono, all'interno del nostro codice.
+
+In tal caso, la dichiarazione di una variabile di tipo `persona` avviene attraverso la sintassi
+```c
+    struct persona padre;
+    struct persona figlio;
+```
 
 ## Linkedlist vs Array di record
 
