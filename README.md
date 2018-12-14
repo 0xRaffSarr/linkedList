@@ -1,4 +1,4 @@
-# linkedList
+# Linked List
 L'esempio mostra una serie di funzioni per manipolare le linked list;
 
 Gli esempi sono stati sviluppati secondo due modalità:
@@ -34,16 +34,16 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 1. [Introduzione](#introduzione)
     1. [Puntatori](#puntatori)
     1. [Struct](#struct)
-1. [Linkedlist vs Array di record](#linkedlist-vs-array-di-record)
-1. [Tipi di linkedlist](#tipi-di-linkedlist)
-    1. [Linkedlist semplici](#linkedlist-semplici)
-    1. [Linkedlist doppiamente concatenta](#linkedlist-doppiamente-concatenate)
-    1. [Linkedlist circolari](#linkedlist-circolari)
-1. [Operazioni sulle linkedList](#operazioni-sulle-linkedlist)
+1. [Linked List vs Array di record](#linked-list-vs-array-di-record)
+1. [Tipi di Linked List](#tipi-di-linked-list)
+    1. [Linked List semplici](#linked-list-semplici)
+    1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
+    1. [Linked List circolari](#linked-list-circolari)
+1. [Operazioni sulle Linked List](#operazioni-sulle-linked-list)
 
 ## Introduzione
 
-Per poter utilizzare correttamente le liste(`linkedlist`), occorre saper utilizzare i `puntatori` e le struct ( `record` ). Le linked list, sono il frutto di una combinazione di puntatori e record. A causa della loro flessibilità e facilità su alcune operazioni di gestione, rappresentano una struttura molto importante in alcuni ambiti;
+Per poter utilizzare correttamente le liste(`Linked List`), occorre saper utilizzare i `puntatori` e le struct ( `record` ). Le linked list, sono il frutto di una combinazione di puntatori e record. A causa della loro flessibilità e facilità su alcune operazioni di gestione, rappresentano una struttura molto importante in alcuni ambiti;
 
 ### Puntatori
 
@@ -197,15 +197,15 @@ La definizione di una struct, non comporta allocazione di memoria. L'allocazione
 ```
 
 
-## Linkedlist vs Array di record
+## Linked List vs Array di record
 
 
-## Tipi di linkedlist
+## Tipi di Linked List
 
-### Linkedlist semplici
+### Linked List semplici
 
-### Linkedlist doppiamente concatenate
+### Linked List doppiamente concatenate
 
-### Linkedlist circolari
+### Linked List circolari
 
-### Operazioni sulle linkedlist
+### Operazioni sulle Linked List
