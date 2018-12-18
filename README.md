@@ -34,7 +34,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 1. [Introduzione](#introduzione)
     1. [Puntatori](#puntatori)
     1. [Struct](#struct)
-1. [Linked List vs Array di record](#linked-list-vs-array-di-record)
+1. [Linked List vs Array di struct](#linked-list-vs-array-di-struct)
 1. [Tipi di Linked List](#tipi-di-linked-list)
     1. [Linked List semplici](#linked-list-semplici)
     1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
@@ -131,12 +131,12 @@ essere raggruppate in un unico blocco di memoria e accessibili con un singolo pu
 Nel linguaggio **C**, una struct fa direttamente riferimento ad un blocco contiguo di memoria fisica.
 
 ```c
-    struct [structureTag]{
+    struct [nomeStruct]{
         Member definition;
         Member definition;
         .................
         Member definition;
-    }[One or more variables];
+    }[Una o pi&ugrave; variabili];
 ```
 Una struct pu&ograve; essere dichiarata in varie parti del corpo del codice e in vari modi. Se la dichiaro
 all'interno del main o all'interno di una procedura, essa sar&agrave; visibile solo all'interno del suo scope.
@@ -195,9 +195,23 @@ La definizione di una struct, non comporta allocazione di memoria. L'allocazione
 
     struct persona padre; //ho allocato memoria per la variabile padre, di tipo persona
 ```
+L'utilizzo delle struct, permette di poter definire pi&ugrave; informazioni le quali saranno contenute tutte in un unico contenitore. In tal caso per&ograve; ogni variabile di tipo struct, in memoria avr&agrave; un peso che è equivalente alla somma del peso delle singole tipologie di tipi che la compongono.
 
+Un classico esempio del perch&egrave; si rende conveniente l'utilizzo delle strutture, &egrave; quello di una rubrica. Si pensi di voler memorizzare per ogni contatto:
+    - Nome
+    - Cognome
+    - Cellulare
+nel caso in cui non ci fossero le strutture, dovremmo andare ad utilizzare e quindi gestire, tre variabili completamente separate ed indipendenti l'una dall'altra. Con le struct, invece possiamo creare un tipo di variabile che andr&agrave; a contenere tutte le informazioni che ci interessano;
 
-## Linked List vs Array di record
+```c
+struct contatto{
+    char nome[32];
+    char cognome[32];
+    char telefono[11]; //i numeri telefonici conviene gestirli come stringhe;
+}
+```
+
+## Linked List vs Array di struct
 
 
 ## Tipi di Linked List
