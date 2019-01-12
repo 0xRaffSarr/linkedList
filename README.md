@@ -252,9 +252,38 @@ struct contatto{
     struct contatto * next;
 }
 ```
-Dove `struct contatto *next;`, rappresenta il puntatore all'elemento successivo della lista. L'itilizzo delle linked list, avviene inoltre attraverso la gestione dinamica, il cui utilizzo verr&agrave; approfondito nella repo relativa alla [memoria dinamica in C](https://github.com/0xRaffSarr/dynamicMemoryC);
+Dove `struct contatto *next;`, rappresenta il puntatore all'elemento successivo della lista. L'itilizzo delle linked list, avviene inoltre attraverso la gestione dinamica, il cui utilizzo verr&agrave; approfondito nella repo relativa alla [memoria dinamica in C](https://github.com/0xRaffSarr/dynamicMemoryC).
+
+La creazione di un elemento, consiste nell'allocazione di memoria per quel elemento, e la modifica dei puntatori a quell'elemento.
+Per elemento viene eliminato, rimuovendo i suoi puntatori e liberando la memoria da esso occupata.
+**Per eliminare un'intera lista, occorre eliminare ogni singolo elemento della lista, e non solo il puntatore al primo elemento**
 
 ### Linked List semplici
+Una linked list semplice, non &egrave; altro che una lista dove ogni elemento possiede il riferimento all'elemento successivo e la sua struttura, &egrave; semplice.
+```c
+struct contatto{
+    char nome[32];
+    char telefono[11]; //i numeri telefonici conviene gestirli come stringhe;
+    struct contatto * next;
+}
+```
+In tale tipo di lista, viene utilizzato un puntatore al primo elemento della lista, dello stesso tipo della struttura, il quale inizialmente viene posto a `NULL`, creando così una lista vuota;
+```c
+int main(){
+    struct contatto * Top = NULL;
+
+    return 0;
+}
+```
+Il puntatore alla lista viene aggiornato con l'indirizzo del primo elemento della lista, non appena viene aggiunto il primo elemento. L'ultimo elemento della lista viene identificato dal valore del puntatore all'elemento successivo, che in tal caso punterà a NULL.
+##### Inserimento in testa
+Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
+```c
+    struct contatto insertTesta(struct contatto lista, struct contatto nuovo){
+
+        
+    }
+```
 
 ### Linked List doppiamente concatenate
 
