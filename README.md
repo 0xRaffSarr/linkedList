@@ -220,7 +220,9 @@ Entrambe le metodologie possiedono tuttavia sia pro che contro.
 Tipo | Pro | Contro
 ---- | --- | ------
 Array | L'accesso ai singoli elementi sella lista pu&ograve; avvenire in modo diretto o sequenziale, indicando l'indice dell'elemento. | Nelle operazioni di inserimento e rimozione degli elementi, per posizionarli occorre spesso eseguire un'opeazione di shift sugli elementi gi&agrave; presenti;
+Array | - | Il numero massimo di oggetti che possono essere inseriti, deve essere stabilito in precedenza, sin dal momento della compilazione del software;
 Linked List | Nelle operazioni di inserimento o rimozione dei singoli elementi, non occorre eseguire alcuna operazione di shift sugli elementi già presenti, ma solo cambiare i puntatori agli elementi successivi e precedenti; | L'accesso ai singoli elementi non pu&ograve; avvennire in modo diretto, ma solo in modo sequenziale;
+Linked List | - | Non &egrave; necessario stabilire un numero massimo di elementi, infatti tale valore &egrave; strettamente legato alla memoria disponibile sulla macchina, in cui &egrave; in esecuzione il programma;
 
 Le linked list, sono anpiamente utilizzate proprio per la loro facilità di gestione, nonostante la realizzazione pu&ograve; risultare a prima vista pi&ugrave; ardua, la gestione ne risulta pi&ugrave; facile; prendendo come esempio una semplice rubrica, contenente nome e numero di telefono per ogni contatto, con una stuttura del genere:
 
@@ -235,6 +237,12 @@ Andando a gestirla come array, abbiamo che, nel caso in cui vogliamo inserire un
 Gestendo invece la rubrica come linked list, sempre nel caso in cui il nuovo contatto va inserito in mezzo alla lista, occorrer&agrave; individuare la giusta posizione, creare il nuvo elemento, e successivamente modificare i puntatori dell'emento precedente, dell'elemento appena creato e, se necessario dell'elemento successivo. Senza eseguire alcuna operazione di shift.
 
 ## Tipi di Linked List
+Si possono individuare vari tipi di linked list, ognuna delle quali, presenta alcune caratteristiche differenti; Tuttavia esse presentano le medesime caratteristiche. Per l'utilizzo delle linked list, occorre necessariamente, poter individuare tre cose che risultano essere fondamenti:
+- Quale sia il primo elemento della lista;
+- Quale sia l'elemento successivo;
+- L'ultimo elemento della lista;
+
+*In particolar modo, il primo elemento della lista, deve sempre essere conosciuto in precedenza.*
 
 ### Linked List semplici
 
