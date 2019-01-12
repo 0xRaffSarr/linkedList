@@ -136,7 +136,7 @@ Nel linguaggio **C**, una struct fa direttamente riferimento ad un blocco contig
         Member definition;
         .................
         Member definition;
-    }[Una o pi&ugrave; variabili];
+    }[Una o più variabili];
 ```
 Una struct pu&ograve; essere dichiarata in varie parti del corpo del codice e in vari modi. Se la dichiaro
 all'interno del main o all'interno di una procedura, essa sar&agrave; visibile solo all'interno del suo scope.
