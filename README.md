@@ -252,7 +252,7 @@ struct contatto{
     struct contatto * next;
 }
 ```
-Dove `struct contatto *next;`, rappresenta il puntatore all'elemento successivo della lista;
+Dove `struct contatto *next;`, rappresenta il puntatore all'elemento successivo della lista. L'itilizzo delle linked list, avviene inoltre attraverso la gestione dinamica, il cui utilizzo verr&agrave; approfondito nella repo relativa alla [memoria dinamica in C](https://github.com/0xRaffSarr/dynamicMemoryC);
 
 ### Linked List semplici
 
