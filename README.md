@@ -242,7 +242,17 @@ Si possono individuare vari tipi di linked list, ognuna delle quali, presenta al
 - Quale sia l'elemento successivo;
 - L'ultimo elemento della lista;
 
-*In particolar modo, il primo elemento della lista, deve sempre essere conosciuto in precedenza.*
+**In particolar modo, il primo elemento della lista, deve sempre essere conosciuto in precedenza.**
+
+Solitamente l'ultimo elemento della lista, viene identificato dal fatto che il puntatore all'elemento successivo &egrave; posto a `NULL`, mentre l'indirizzo di memoria del primo elemento, &egrave; contenuto in una variabile contenitore; Considerando l'esempio precedente della rubrica, per utilizzare una linked list, possiamo modificare la struttura in tal modo:
+```c
+struct contatto{
+    char nome[32];
+    char telefono[11]; //i numeri telefonici conviene gestirli come stringhe;
+    struct contatto * next;
+}
+```
+Dove `struct contatto *next;`, rappresenta il puntatore all'elemento successivo della lista;
 
 ### Linked List semplici
 
