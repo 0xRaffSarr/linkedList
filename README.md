@@ -216,7 +216,11 @@ Le struct, possono essere utilizzate anche come array, ottenendo cosi un `array 
 
 In effetti entrambe le implementazioni consentono di ottenere gli stessi risultati, ma con metodologie differenti e, nel caso delle linked list, risultano facilitate le operazioni di inserimento e di rimozione dei vari oggetti che compongono la lista.
 Entrambe le metodologie possiedono tuttavia sia pro che contro.
-### Array pro e contro
+
+Tipo | Pro | Contro
+---- | --- | ------
+Array | L'accesso ai singoli elementi sella lista pu&ograve; avvenire in modo diretto o sequenziale, indicando l'indice dell'elemento. | Nelle operazioni di inserimento e rimozione degli elementi, per posizionarli occorre spesso eseguire un'opeazione di shift sugli elementi gi&agrave; presenti;
+Linked List | Nelle operazioni di inserimento o rimozione dei singoli elementi, non occorre eseguire alcuna operazione di shift sugli elementi già presenti, ma solo cambiare i puntatori agli elementi successivi e precedenti; | L'accesso ai singoli elementi non pu&ograve; avvennire in modo diretto, ma solo in modo sequenziale;
 
 ## Tipi di Linked List
 
