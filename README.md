@@ -222,6 +222,18 @@ Tipo | Pro | Contro
 Array | L'accesso ai singoli elementi sella lista pu&ograve; avvenire in modo diretto o sequenziale, indicando l'indice dell'elemento. | Nelle operazioni di inserimento e rimozione degli elementi, per posizionarli occorre spesso eseguire un'opeazione di shift sugli elementi gi&agrave; presenti;
 Linked List | Nelle operazioni di inserimento o rimozione dei singoli elementi, non occorre eseguire alcuna operazione di shift sugli elementi già presenti, ma solo cambiare i puntatori agli elementi successivi e precedenti; | L'accesso ai singoli elementi non pu&ograve; avvennire in modo diretto, ma solo in modo sequenziale;
 
+Le linked list, sono anpiamente utilizzate proprio per la loro facilità di gestione, nonostante la realizzazione pu&ograve; risultare a prima vista pi&ugrave; ardua, la gestione ne risulta pi&ugrave; facile; prendendo come esempio una semplice rubrica, contenente nome e numero di telefono per ogni contatto, con una stuttura del genere:
+
+```c
+struct contatto{
+    char nome[32];
+    char telefono[11]; //i numeri telefonici conviene gestirli come stringhe;
+}
+```
+Andando a gestirla come array, abbiamo che, nel caso in cui vogliamo inserire un nuovo contatto, pensando di avere alti contatti gi&agrave; presenti, per mantenere i contatti nel giusto ordine alfabetico, nel caso in cui il contatto deve essere inserito nel mezzo della lista, occorre individuare la giusta posizione, spostare di una posizione, tutti gli elementi da quel punto in poi e infine, inserire il nuovo contatto. Tale situazione verrebbe a verificarsi anche nel caso in cui l'elemento deve essere aggiunto in testa alla lista.
+
+Gestendo invece la rubrica come linked list, sempre nel caso in cui il nuovo contatto va inserito in mezzo alla lista, occorrer&agrave; individuare la giusta posizione, creare il nuvo elemento, e successivamente modificare i puntatori dell'emento precedente, dell'elemento appena creato e, se necessario dell'elemento successivo. Senza eseguire alcuna operazione di shift.
+
 ## Tipi di Linked List
 
 ### Linked List semplici
