@@ -34,7 +34,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
 1. [Introduzione](#introduzione)
     1. [Puntatori](#puntatori)
     1. [Struct](#struct)
-1. [Linked List vs Array di struct](#linked-list-vs-array-di-struct)
+1. [Linked List vs Array](#linked-list-vs-array)
 1. [Tipi di Linked List](#tipi-di-linked-list)
     1. [Linked List semplici](#linked-list-semplici)
     1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
@@ -211,8 +211,12 @@ struct contatto{
 }
 ```
 
-## Linked List vs Array di struct
+## Linked List vs Array
+Le struct, possono essere utilizzate anche come array, ottenendo cosi un `array di struct`. A tal punto viene da chiedersi perch&egrave; introdurre le liste, se possiamo utilizzare gli array per ottenere il medesimo risultato?
 
+In effetti entrambe le implementazioni consentono di ottenere gli stessi risultati, ma con metodologie differenti e, nel caso delle linked list, risultano facilitate le operazioni di inserimento e di rimozione dei vari oggetti che compongono la lista.
+Entrambe le metodologie possiedono tuttavia sia pro che contro.
+### Array pro e contro
 
 ## Tipi di Linked List
 
