@@ -276,12 +276,24 @@ int main(){
 }
 ```
 Il puntatore alla lista viene aggiornato con l'indirizzo del primo elemento della lista, non appena viene aggiunto il primo elemento. L'ultimo elemento della lista viene identificato dal valore del puntatore all'elemento successivo, che in tal caso punterà a NULL.
-##### Inserimento in testa
+#### Creazione di un nodo
+La creazione di un nodo avviene allocando la memoria necessaria per quel nodo e, inizializzando le sue variabili
+```c
+struct contatto *creaNodo(char nomeContatto[],char numero[]){
+    struct contatto * tmp = (struct contatto * ) malloc(sizeof(struct contatto));
+    tmp -> nome = nomeContatto;
+    tmp -> telefono = numero;
+    tmp -> next = NULL;
+    return tmp;
+}
+```
+Nella fase di creazione, il puntatore al prossimo elemento viene settato a NULL, se necessario esso verr&agrave; modifica nella fase di inserimento. La procedura di tipo `struct contatto *` restituisce `tmp`, ovvero l'indirizzo del nodo appena creato.
+#### Inserimento in testa
 Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
 ```c
     struct contatto insertTesta(struct contatto lista, struct contatto nuovo){
 
-        
+
     }
 ```
 
