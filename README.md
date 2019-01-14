@@ -267,7 +267,7 @@ struct contatto{
     struct contatto * next;
 }
 ```
-In tale tipo di lista, viene utilizzato un puntatore al primo elemento della lista, dello stesso tipo della struttura, il quale inizialmente viene posto a `NULL`, creando così una lista vuota;
+In tale tipo di lista, viene utilizzato un puntatore al primo elemento della lista, dello stesso tipo della struttura, il quale inizialmente viene posto a `NULL`, creando così una lista vuota. In tale circostanza non &egrave; necessario allocare memoria per quel elemento.
 ```c
 int main(){
     struct contatto * Top = NULL;
@@ -296,7 +296,7 @@ La procedura malloc(), ha come prototipo `char *malloc(int number_of_bytes)`, il
 #### Inserimento in testa
 Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
 ```c
-    struct contatto insertTesta(struct contatto lista, struct contatto nodo){
+    struct contatto *insertTesta(struct contatto *lista, struct contatto *nodo){
         if(lista == NULL){
             lista = nodo;
         }
@@ -326,6 +326,17 @@ Dal momento che ogni nodo mantiene anche l'informazione su chi sia il nodo prece
 Possiamo quindi dire che:
 - **l'ultimo elemento della lista ha il puntatore a next che ha valore NULL**;
 - **il primo elemento della lista ha il puntatore a prev che ha valore NULL**;
+Per quanto riguarda le operazioni di creazione e inserimento dei nodi, non vi &egrave; grande differenza rispetto alle linked list sempli. Anzi nelle operazioni di inserimento in mezzo, non occorre più mantenere l'informazione su chi sia l'elemento precedente, in quanto essa &egrave; gi&agrave; presente all'interno di ogni nodo.
+
+Anche in questo caso, una lista vuota, &egrave; data dal puntatore del primo elemento posto a NULL. Quindi il seguente codice
+```c
+int main(){
+    struct contatto * lista = NULL; //sto creando una lista vuota
+
+    return 0;
+}
+```
+mi permette di creare una lista vuota, anche in tal caso, come avviene per le liste semplici, non ho neccessit&agrave; di allocare memoria.
 ### Linked List circolari
 
 ### Operazioni sulle Linked List
