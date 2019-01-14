@@ -326,6 +326,7 @@ Dal momento che ogni nodo mantiene anche l'informazione su chi sia il nodo prece
 Possiamo quindi dire che:
 - **l'ultimo elemento della lista ha il puntatore a next che ha valore NULL**;
 - **il primo elemento della lista ha il puntatore a prev che ha valore NULL**;
+
 Per quanto riguarda le operazioni di creazione e inserimento dei nodi, non vi &egrave; grande differenza rispetto alle linked list sempli. Anzi nelle operazioni di inserimento in mezzo, non occorre più mantenere l'informazione su chi sia l'elemento precedente, in quanto essa &egrave; gi&agrave; presente all'interno di ogni nodo.
 
 Anche in questo caso, una lista vuota, &egrave; data dal puntatore del primo elemento posto a NULL. Quindi il seguente codice
