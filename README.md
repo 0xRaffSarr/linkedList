@@ -294,9 +294,15 @@ La procedura malloc(), ha come prototipo `char *malloc(int number_of_bytes)`, il
 #### Inserimento in testa
 Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
 ```c
-    struct contatto insertTesta(struct contatto lista, struct contatto nuovo){
-
-
+    struct contatto insertTesta(struct contatto lista, struct contatto nodo){
+        if(lista == NULL){
+            lista = nodo;
+        }
+        else{
+            nodo->next = lista;
+            lista = nodo;
+        }
+        return lista;
     }
 ```
 
