@@ -288,6 +288,9 @@ struct contatto *creaNodo(char nomeContatto[],char numero[]){
 }
 ```
 Nella fase di creazione, il puntatore al prossimo elemento viene settato a NULL, se necessario esso verr&agrave; modifica nella fase di inserimento. La procedura di tipo `struct contatto *` restituisce `tmp`, ovvero l'indirizzo del nodo appena creato.
+
+L'operazione `(struct contatto * ) malloc(sizeof(struct contatto))`, permette di allocare la memoria necessaria per il nodo, per tale motivo come parametro di `malloc()`, bisogna passare la dimensione della struct quindi `sizeof(struct contatto)`.
+La procedura malloc(), ha come prototipo `char *malloc(int number_of_bytes)`, il quale restituisce l'indirizzo di memoria di un char, per tale motivo occorre eseguire un casting esplicito `(struct contatto * )`.
 #### Inserimento in testa
 Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
 ```c
