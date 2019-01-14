@@ -276,6 +276,8 @@ int main(){
 }
 ```
 Il puntatore alla lista viene aggiornato con l'indirizzo del primo elemento della lista, non appena viene aggiunto il primo elemento. L'ultimo elemento della lista viene identificato dal valore del puntatore all'elemento successivo, che in tal caso punterà a NULL.
+
+In una lista semplice, sappiamo sempre quale sia il l'elemento successivo, ma non abbiamo alcuna informazione su chi sia l'elemento precedente, quindi in alcune operazioni, si rende necessario utilizzare delle variabili temporanee che possano mantenere delle informazioni sull'elemento precedente.
 #### Creazione di un nodo
 La creazione di un nodo avviene allocando la memoria necessaria per quel nodo e, inizializzando le sue variabili
 ```c
@@ -305,9 +307,25 @@ Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valo
         return lista;
     }
 ```
+La procedura di inserimento in testa, risulta essere la pi&ugrave; semplice da realizzare, occorre eseguire un controllo, per verificare se la lista &egrave; vuota, nel caso il nuovo nodo viene assegnato alla lista, in caso contrario,  l'indirizzo di memoria del primo elemento della lista al puntatore all'elemento successivo, per poi porre il nuovo nodo, come primo elemento della lista;
 
 ### Linked List doppiamente concatenate
+Una linked list doppiamente concatenata o doppiamente collegate, &egrave; caratterizzata dal fatto che ogni nodo della lista possiede due puntatori, un puntatore al prossimo nodo della lista e un puntatore al nodo precedente. In tal caso, la struttura pu&ograve; essere modificata nel seguente modo:
+```c
+struct contatto{
+    char nome[32];
+    char telefono[11]; //i numeri telefonici conviene gestirli come stringhe;
+    struct contatto * next;
+    struct contatto * prev;
+}
+```
+Anche in questo caso occorre mantenere l'informazione su quale sia il primo elemento della lista. L'ultimo elemento della lista, anche in questo caso &egrave; identificato dal fatto che il puntatore al prossimo elemento ha valore NULL.
 
+Dal momento che ogni nodo mantiene anche l'informazione su chi sia il nodo precedente, la lista pu&ograve; essere percorsa in due direzione. Se la lista viene percorsa in senso inverso, il primo elemento della lista, pu&ograve; essere individuato osservando il valore del puntatore all'elemento precedente,il qual avr&agrave; valore NULL.
+
+Possiamo quindi dire che:
+- **l'ultimo elemento della lista ha il puntatore a next che ha valore NULL**;
+- **il primo elemento della lista ha il puntatore a prev che ha valore NULL**;
 ### Linked List circolari
 
 ### Operazioni sulle Linked List
