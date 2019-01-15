@@ -41,6 +41,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
     1. [Linked List circolari](#linked-list-circolari)
 1. [Operazioni sulle Linked List](#operazioni-sulle-linked-list)
     1. [Inserimento in mezzo](#inserimento-in-mezzo-lista-semplice)
+    1. [Cancellare intera lista](#cancellare-intera-lista)
 
 ## Introduzione
 
@@ -420,7 +421,7 @@ struct nodo *creaNodo(int x){
 ```
 La procedura si occupa di allocare in modo dinamico la memoria necessaria per il nodo e successivamente inizializza i sui valori. Essa restituisce alla procedura chiamante, l'indirizzo di memoria del nuovo nodo.
 
-### Inserimento in mezzo lista semplice
+#### Inserimento in mezzo lista semplice
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo * tmp = creaNodo(k);
@@ -451,3 +452,19 @@ Per poter inserire il nuovo nodo, occorre tener conto di una serie di situazioni
 - La lista non &egrave; vuota e il nuovo nodo, non va posto in testa alla lista. In tal caso, occorre trovare la giusta posizione in cui inserire il nodo, memorizzare quale sia l'elemento che deve precedere il nuovo nodo, quindi inserirlo.
 
 Tutte le operazioni di inserimento, vengono quindi eseguite operando sui puntatori ai vari elementi.
+
+#### Cancellare intera lista
+
+Per cancellare un'intera lista, occorre rimuovere ogni elemento della lista e liberare la memoria da essi occupata.
+```c
+struct nodo *cancellaLista(struct nodo *top){
+    struct nodo * suc = NULL;
+    while(top != NULL){
+        suc = top->next; //modifico il puntatore al prossimo elemento per poter continuare a scorrere la lista
+        free(top);
+        top = suc;
+    }
+    return top;
+}
+```
+Scorro la lista, e elimino ogni singolo elemento che la compone.
