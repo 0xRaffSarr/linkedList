@@ -347,6 +347,50 @@ mi permette di creare una lista vuota, anche in tal caso, come avviene per le li
 
 ### Linked List circolari
 
-Una linked list circolare o con elemento fittizio, ha una struttura molto simile a quella di una linked list doppiamente collegata
+Una linked list circolare o con elemento fittizio, ha una struttura molto simile a quella di una linked list doppiamente collegata, ma ci&ograve; non toglie che pu&ograve; essere utilizzata anche la struttura di una linked list semplice;
+
+Il caso generale presenta una struttura con due puntatori, un puntatore al prossimo elemento e un puntatore all'elemento precedente. La creazione della lista avviene mediante la creazione di un elemento fittizio (la lista vuota &egrave; data dalla presenza del solo elemento fittizio). In questo caso, il puntatore a next dell'ultimo elemento punta all'elemento fittizio anch&eacute; a NULL. Allo stesso modo, il puntatore a prev del primo elemento, punta all'elemento fittizio. Dal momento che anche l'elemento fittizio ha la stesso struttura di tutti gli altri elementi, anche i sui puntatori puntano rispettivamente al primo e all'ultimo elemento della lista.
+
+In tal caso, non basta pi&ugrave; dichiarare il puntatore alla lista, per definire una lista vuota, si ha infatti la necessit&agrave; di allocare memoria per l'elemento fittizio:
+```c
+struct nodo *creaLista(){
+    struct nodo * sentinella = NULL;
+    sentinella = (struct nodo * )malloc(sizeof(struct nodo));
+    sentinella->prev = sentinella;
+    sentinella->next = sentinella;
+    return sentinella;
+}
+
+int main(){
+    struct nodo * lista = creaLista();
+    return 0;
+}
+```
+
+In questo caso, abbiamo una lista perfettamente circolare, la quale pu&ograve; essere percorsa in entrambi i sensi, senza interruzioni. Bisogna quindi individuare un modo per capire quando la lista &egrave; terminata, tale modo viene individuato con l'elemento fittizio. Avremmo quindi che una lista vuota &egrave; costituita da una lista contenente il solo elemento fittizio. In questo caso, durante lo scorrimento della lista, per sapere quando bisogna fermarsi si effettua un'uguaglianza tra in nodo attuale e il puntatore all'elemento fittizio.
+
+**Esempio dell'operazione di stampa**
+```c
+int isEmpty(struct nodo *lista){
+    int res = 0;
+    if(lista->next == lista) res = 1;
+    return res;
+}
+
+void stampaLista(struct nodo * lista){
+    struct nodo * tmp = lista->next;
+
+    if(isEmpty(lista)){
+        printf("\tLa lista e' vuota;\n");
+    }
+    else{
+        while(tmp!=lista){
+            printf("%4d",tmp->data);
+            tmp = tmp->next;
+        }
+        printf("\n");
+    }
+}
+```
 
 ### Operazioni sulle Linked List
