@@ -40,7 +40,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
     1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
     1. [Linked List circolari](#linked-list-circolari)
 1. [Operazioni sulle Linked List](#operazioni-sulle-linked-list)
-    1. [Inserimento in mezzo](#inserimento_in_mezzo)
+    1. [Inserimento in mezzo](#inserimento_in_mezzo_lista_semplice)
 
 ## Introduzione
 
@@ -420,7 +420,7 @@ struct nodo *creaNodo(int x){
 ```
 La procedura si occupa di allocare in modo dinamico la memoria necessaria per il nodo e successivamente inizializza i sui valori. Essa restituisce alla procedura chiamante, l'indirizzo di memoria del nuovo nodo.
 
-### Inserimento in mezzo
+### Inserimento in mezzo lista semplice
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo * tmp = creaNodo(k);
