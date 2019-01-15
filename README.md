@@ -415,6 +415,8 @@ struct nodo *creaNodo(int x){
     return tmp;
 }
 ```
+La procedura si occupa di allocare in modo dinamico la memoria necessaria per il nodo e successivamente inizializza i sui valori. Essa restituisce alla procedura chiamante, l'indirizzo di memoria del nuovo nodo.
+
 **Inserimento in mezzo di un nodo (lista semplice)**
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
@@ -439,3 +441,8 @@ struct nodo *addInMezzo(struct nodo *top,int k){
     return top;
 }
 ```
+
+Per poter inserire il nuovo nodo, occorre tener conto di una serie di situazioni che possono verificarsi durante l'inserimento.
+- La lista potrebbe essere vuota, in questo caso, verr&agrave; semplicemnte modificato il puntatore al primo elemento della lista, facendolo puntare al nodo appena creato;
+- La lista non &egrave; vuota, ma per mantenere il corretto ordine, il nuovo nodo deve essere inserito in testa alla lista, quibndi si esegue un semplice inserimento in testa;
+- La lista non &egrave; vuota e il nuovo nodo, non va posto in testa alla lista. In tal caso, occorre trovare la giusta posizione in cui inserire il nodo, memorizzare quale sia l'elemento che deve precedere il nuovo nodo, quindi inserirlo.
