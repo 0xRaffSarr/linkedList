@@ -40,7 +40,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
     1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
     1. [Linked List circolari](#linked-list-circolari)
 1. [Operazioni sulle Linked List](#operazioni-sulle-linked-list)
-    1. [Inserimento in mezzo](#Inserimento_in_mezzo)
+    1. [Inserimento in mezzo](#inserimento_in_mezzo)
 
 ## Introduzione
 
