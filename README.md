@@ -397,6 +397,24 @@ void stampaLista(struct nodo * lista){
 
 Sulle linked list, &egrave; possibile eseguire quasi tutte le operazioni che possono essere eseguite sugli array, a parte qualche tipo di ricerca. Inoltre le operazioni di inserimento e cancellazione dei nodi sono facilitate.
 
+Considerando di avere una struttura del tipo:
+```c
+struct nodo{
+    int k;
+    struct nodo * next;
+};
+```
+
+E una procedura creaNodo del seguente tipo:
+
+```c
+struct nodo *creaNodo(int x){
+    struct nodo * tmp = (struct nodo * ) malloc(sizeof(struct nodo));
+    tmp -> k = x;
+    tmp -> next = NULL;
+    return tmp;
+}
+```
 **Inserimento in mezzo di un nodo (lista semplice)**
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
