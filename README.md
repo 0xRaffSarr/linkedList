@@ -468,3 +468,7 @@ struct nodo *cancellaLista(struct nodo *top){
 }
 ```
 Scorro la lista, e elimino ogni singolo elemento che la compone.
+
+
+## Cooperation
+Si ringrazia [Gennaro Landolfi](https://github.com/rinodrummer) per la collaborazione.
