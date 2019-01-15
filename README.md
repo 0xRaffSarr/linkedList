@@ -212,6 +212,7 @@ struct contatto{
 ```
 
 ## Linked List vs Array
+
 Le struct, possono essere utilizzate anche come array, ottenendo cosi un `array di struct`. A tal punto viene da chiedersi perch&egrave; introdurre le liste, se possiamo utilizzare gli array per ottenere il medesimo risultato?
 
 In effetti entrambe le implementazioni consentono di ottenere gli stessi risultati, ma con metodologie differenti e, nel caso delle linked list, risultano facilitate le operazioni di inserimento e di rimozione dei vari oggetti che compongono la lista.
@@ -237,6 +238,7 @@ Andando a gestirla come array, abbiamo che, nel caso in cui vogliamo inserire un
 Gestendo invece la rubrica come linked list, sempre nel caso in cui il nuovo contatto va inserito in mezzo alla lista, occorrer&agrave; individuare la giusta posizione, creare il nuvo elemento, e successivamente modificare i puntatori dell'emento precedente, dell'elemento appena creato e, se necessario dell'elemento successivo. Senza eseguire alcuna operazione di shift.
 
 ## Tipi di Linked List
+
 Si possono individuare vari tipi di linked list, ognuna delle quali, presenta alcune caratteristiche differenti; Tuttavia esse presentano le medesime caratteristiche. Per l'utilizzo delle linked list, occorre necessariamente, poter individuare tre cose che risultano essere fondamenti:
 - Quale sia il primo elemento della lista;
 - Quale sia l'elemento successivo;
@@ -259,6 +261,7 @@ Per elemento viene eliminato, rimuovendo i suoi puntatori e liberando la memoria
 **Per eliminare un'intera lista, occorre eliminare ogni singolo elemento della lista, e non solo il puntatore al primo elemento**
 
 ### Linked List semplici
+
 Una linked list semplice, non &egrave; altro che una lista dove ogni elemento possiede il riferimento all'elemento successivo e la sua struttura, &egrave; semplice.
 ```c
 struct contatto{
@@ -293,7 +296,9 @@ Nella fase di creazione, il puntatore al prossimo elemento viene settato a NULL,
 
 L'operazione `(struct contatto * ) malloc(sizeof(struct contatto))`, permette di allocare la memoria necessaria per il nodo, per tale motivo come parametro di `malloc()`, bisogna passare la dimensione della struct quindi `sizeof(struct contatto)`.
 La procedura malloc(), ha come prototipo `char *malloc(int number_of_bytes)`, il quale restituisce l'indirizzo di memoria di un char, per tale motivo occorre eseguire un casting esplicito `(struct contatto * )`.
+
 #### Inserimento in testa
+
 Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valore dell'elemento appena creato, l'attuale primo elemento della lista, successivamente si assegna l'indirizzo dell'elemento appena creato al puntatore TOP, che rappresenta il primo elemento della lista;
 ```c
     struct contatto *insertTesta(struct contatto *lista, struct contatto *nodo){
@@ -310,6 +315,7 @@ Per poter eseguire un inserimento in testa, si setter&agrave; come prossimo valo
 La procedura di inserimento in testa, risulta essere la pi&ugrave; semplice da realizzare, occorre eseguire un controllo, per verificare se la lista &egrave; vuota, nel caso il nuovo nodo viene assegnato alla lista, in caso contrario,  l'indirizzo di memoria del primo elemento della lista al puntatore all'elemento successivo, per poi porre il nuovo nodo, come primo elemento della lista;
 
 ### Linked List doppiamente concatenate
+
 Una linked list doppiamente concatenata o doppiamente collegate, &egrave; caratterizzata dal fatto che ogni nodo della lista possiede due puntatori, un puntatore al prossimo nodo della lista e un puntatore al nodo precedente. In tal caso, la struttura pu&ograve; essere modificata nel seguente modo:
 ```c
 struct contatto{
@@ -338,6 +344,9 @@ int main(){
 }
 ```
 mi permette di creare una lista vuota, anche in tal caso, come avviene per le liste semplici, non ho neccessit&agrave; di allocare memoria.
+
 ### Linked List circolari
+
+Una linked list circolare o con elemento fittizio, ha una struttura molto simile a quella di una linked list doppiamente collegata
 
 ### Operazioni sulle Linked List
