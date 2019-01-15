@@ -420,7 +420,7 @@ struct nodo *creaNodo(int x){
 ```
 La procedura si occupa di allocare in modo dinamico la memoria necessaria per il nodo e successivamente inizializza i sui valori. Essa restituisce alla procedura chiamante, l'indirizzo di memoria del nuovo nodo.
 
-#### Inserimento in mezzo
+### Inserimento in mezzo
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo * tmp = creaNodo(k);
