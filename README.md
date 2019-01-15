@@ -40,6 +40,7 @@ Nell'esempio ricorsivo come algoritmo di ordinamento é stato utilizzato il Quic
     1. [Linked List doppiamente concatenta](#linked-list-doppiamente-concatenate)
     1. [Linked List circolari](#linked-list-circolari)
 1. [Operazioni sulle Linked List](#operazioni-sulle-linked-list)
+    1. [Inserimento in mezzo](#Inserimento_in_mezzo)
 
 ## Introduzione
 
@@ -281,7 +282,9 @@ int main(){
 Il puntatore alla lista viene aggiornato con l'indirizzo del primo elemento della lista, non appena viene aggiunto il primo elemento. L'ultimo elemento della lista viene identificato dal valore del puntatore all'elemento successivo, che in tal caso punterà a NULL.
 
 In una lista semplice, sappiamo sempre quale sia il l'elemento successivo, ma non abbiamo alcuna informazione su chi sia l'elemento precedente, quindi in alcune operazioni, si rende necessario utilizzare delle variabili temporanee che possano mantenere delle informazioni sull'elemento precedente.
+
 #### Creazione di un nodo
+
 La creazione di un nodo avviene allocando la memoria necessaria per quel nodo e, inizializzando le sue variabili
 ```c
 struct contatto *creaNodo(char nomeContatto[],char numero[]){
@@ -417,7 +420,7 @@ struct nodo *creaNodo(int x){
 ```
 La procedura si occupa di allocare in modo dinamico la memoria necessaria per il nodo e successivamente inizializza i sui valori. Essa restituisce alla procedura chiamante, l'indirizzo di memoria del nuovo nodo.
 
-**Inserimento in mezzo di un nodo (lista semplice)**
+#### Inserimento in mezzo
 ```c
 struct nodo *addInMezzo(struct nodo *top,int k){
     struct nodo * tmp = creaNodo(k);
@@ -446,3 +449,5 @@ Per poter inserire il nuovo nodo, occorre tener conto di una serie di situazioni
 - La lista potrebbe essere vuota, in questo caso, verr&agrave; semplicemnte modificato il puntatore al primo elemento della lista, facendolo puntare al nodo appena creato;
 - La lista non &egrave; vuota, ma per mantenere il corretto ordine, il nuovo nodo deve essere inserito in testa alla lista, quibndi si esegue un semplice inserimento in testa;
 - La lista non &egrave; vuota e il nuovo nodo, non va posto in testa alla lista. In tal caso, occorre trovare la giusta posizione in cui inserire il nodo, memorizzare quale sia l'elemento che deve precedere il nuovo nodo, quindi inserirlo.
+
+Tutte le operazioni di inserimento, vengono quindi eseguite operando sui puntatori ai vari elementi.
